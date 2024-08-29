@@ -22,7 +22,7 @@ Universitat Politècnica de Catalunya
 
 ## Sumari
 
-- [Presentació](presentacio.html) (2 setmanes) <br>
+- [Presentació](introduccio.html) (2 setmanes) <br>
 .small[L'eina. Tipus bàsics i expressions. Funcions, locals, llistes i condicionals. Recursivitat. Seqüències. Exercicis.]
 
 - Funcions *first-class*
