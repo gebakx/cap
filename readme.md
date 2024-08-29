@@ -25,7 +25,7 @@ Universitat Politècnica de Catalunya
 - [Introducció a Clojure](introduccio.html) (2 setmanes) <br>
 .small[L'eina. Tipus bàsics i expressions. Funcions, locals, llistes i condicionals. Recursivitat. Seqüències. Exercicis.]
 
-- Funcions *first-class*
+- [Funcions *first-class*]() (2 setmanes)
 
 - Clausures i models d'entorns
 
