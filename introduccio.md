@@ -414,7 +414,7 @@ class: left, middle, inverse
 
 # Definicions locals
 
-El `let` serveix per crear un *binding* en un context (*scope*) lèxic.
+El `let` serveix per crear un lligam (*binding*) en un context (*scope*) lèxic.
 
 **Sintaxi**:
 
