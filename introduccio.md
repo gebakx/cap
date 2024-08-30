@@ -2,7 +2,7 @@ class: center, middle
 
 ## Conceptes Avançats de Programació
 
-# Presentació
+# Introducció a Clojure
 
 <br>
 
