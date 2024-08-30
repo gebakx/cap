@@ -31,6 +31,8 @@ class: left, middle, inverse
 
 - Recursivitat
 
+- Tractament d'excepcions
+
 - Exercicis
 
 ---
@@ -170,6 +172,8 @@ class: left, middle, inverse
 - Funcions, definicions locals i condicionals
 
 - Recursivitat
+
+- Tractament d'excepcions
 
 - Exercicis
 
@@ -336,14 +340,14 @@ No hi ha precedència d'operadors en Clojure; no calen degut a la notació.
 | `concat` | concatenar llistes | `(concat '(1 2) '() '(3))  👉  (1 2 3)` |
 | `range` | generador de llistes | `(range 5)  👉  (0 1 2 3 4)` |
 | | | `(range 1 5)  👉  (1 2 3 4)` |
+| `take`| subllista esquerra | (take 3 (range 6))  👉  (0 1 2) |
+| `drop`| subllista dreta | (drop 3 (range 6))  👉  (3 4 5) |
 
 **Vectors**:
 
 - Estructura similar a les llistes: `[1 2 3]`
 
 - Els paràmetres de les funcions venen en vectors.
-
-- El `conj` afegeix pel final.
 
 ---
 class: left, middle, inverse
@@ -357,6 +361,8 @@ class: left, middle, inverse
 - .cyan[Funcions, definicions locals i condicionals]
 
 - Recursivitat
+
+- Tractament d'excepcions
 
 - Exercicis
 
@@ -385,10 +391,8 @@ class: left, middle, inverse
 (#(+ 1 %1 %2) 3 4)  👉  8
 ```
 
-**Parcials**:
-
 ```clojure
-((partial + 2) 4)  👉  6
+((fn [x y] (+ 1 x y)) 3 4)  👉  8
 ```
 ]
 .col2[
@@ -472,6 +476,8 @@ class: left, middle, inverse
 
 - .cyan[Recursivitat]
 
+- Tractament d'excepcions
+
 - Exercicis
 
 ---
@@ -538,6 +544,49 @@ class: left, middle, inverse
 - .brown[Funcions, definicions locals i condicionals]
 
 - .brown[Recursivitat]
+
+- .cyan[Tractament d'excepcions]
+
+- Exercicis
+
+---
+
+# Tractament d'excepcions
+
+**Captura**:
+
+```clojure
+(try 
+  (/ 2 0) 
+  (catch ArithmeticException e "divide by zero"))
+
+👉  "divide by zero"
+```
+
+**Llançament**:
+
+```clojure
+(try
+  (throw (Exception. "Hola excepció!"))
+  (catch Exception e (.getMessage e)))
+
+👉  "Hola excepció!"
+```
+
+---
+class: left, middle, inverse
+
+## Sumari
+
+- .brown[L'eina]
+
+- .brown[Tipus bàsics, expressions i llistes]
+
+- .brown[Funcions, definicions locals i condicionals]
+
+- .brown[Recursivitat]
+
+- .brown[Tractament d'excepcions]
 
 - .cyan[Exercicis]
 

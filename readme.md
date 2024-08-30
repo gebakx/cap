@@ -23,11 +23,12 @@ Universitat Politècnica de Catalunya
 ## Sumari
 
 - [Introducció a Clojure](introduccio.html) (2 setmanes) <br>
-.small[L'eina. Tipus bàsics i expressions. Funcions, locals, llistes i condicionals. Recursivitat. Seqüències. Exercicis.]
+.small[L'eina. Tipus bàsics i expressions. Funcions, locals, llistes i condicionals. Recursivitat. Tractament d'excepcions. Exercicis.]
 
-- [Funcions *first-class*]() (2 setmanes)
+- [Funcions *first-class*](firstClass.html) (2 setmanes) <br>
+.small[Funcions d'ordre superior. Seqüències (*collections*). Funcions d'ordre superior habituals. Llistes per comprensió. Exercicis.]
 
-- Clausures i models d'entorns
+- [Clausures i models d'entorns](clausures.html) (2 setmanes)
 
 - Funcions d'ordre superior
 
@@ -36,5 +37,4 @@ Universitat Politècnica de Catalunya
 - Avaluació mandrosa
 
 - Macros
-
 
