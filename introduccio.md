@@ -84,7 +84,7 @@ src/
 ```clojure
 ;; hola_mon.clj
 (ns hola_mon)
-(println "Hola, món!"))
+(println "Hola, món!")
 ```
 
 **Execució**:
