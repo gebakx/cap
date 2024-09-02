@@ -2,7 +2,7 @@ class: center, middle
 
 ## Conceptes Avançats de Programació
 
-# Funcions d'ordre superior
+# Funcions *First-Class*
 
 <br>
 
@@ -23,7 +23,7 @@ class: left, middle, inverse
 
 ## Sumari
 
-- .cyan[Funcions d'ordre superior]
+- .cyan[Funcions *First-Class*]
 
 - Seqüències i col·leccions
 
