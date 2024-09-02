@@ -35,9 +35,11 @@ class: left, middle, inverse
 
 ---
 
-# Funcions d'ordre superior
+# Funcions *First-Class*
 
-Funcions que passen com a paràmetres o retornen funcions.
+**Funcions first-class**: són un tipus; es tracten com qualsevol altre valor.
+
+**Funcions d'ordre superior**: passen com a paràmetres o retornen funcions.
 
 **Exemples**:
 
@@ -69,7 +71,7 @@ class: left, middle, inverse
 
 ## Sumari
 
-- .brown[Funcions d'ordre superior]
+- .brown[Funcions *First-Class*]
 
 - .cyan[Seqüències i col·leccions]
 
@@ -110,7 +112,7 @@ class: left, middle, inverse
 
 ## Sumari
 
-- .brown[Funcions d'ordre superior]
+- .brown[Funcions *First-Class*]
 
 - .brown[Seqüències i col·leccions]
 
@@ -264,7 +266,7 @@ class: left, middle, inverse
 
 ## Sumari
 
-- .brown[Funcions d'ordre superior]
+- .brown[Funcions *First-Class*]
 
 - .brown[Seqüències i col·leccions]
 
@@ -309,7 +311,7 @@ class: left, middle, inverse
 
 ## Sumari
 
-- .brown[Funcions d'ordre superior]
+- .brown[Funcions *First-Class*]
 
 - .brown[Seqüències i col·leccions]
 
