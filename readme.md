@@ -26,7 +26,7 @@ Universitat Politècnica de Catalunya
 .small[L'eina. Tipus bàsics i expressions. Funcions, locals, llistes i condicionals. Recursivitat. Tractament d'excepcions. Exercicis.]
 
 - [Funcions *first-class*](firstClass.html) (2 setmanes) <br>
-.small[Funcions d'ordre superior. Seqüències (*collections*). Funcions d'ordre superior habituals. Llistes per comprensió. Exercicis.]
+.small[Funcions d'ordre superior. Seqüències i col·leccions. Funcions d'ordre superior habituals. Llistes per comprensió. Exercicis.]
 
 - [Clausures i models d'entorns](clausures.html) (2 setmanes)
 
