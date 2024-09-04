@@ -21,7 +21,7 @@ Universitat Politècnica de Catalunya
 ---
 class: left, middle, inverse
 
-## Sumari
+## Contingut
 
 - .cyan[L'eina]
 
@@ -163,7 +163,7 @@ java -cp hola_mon.jar clojure.main
 ---
 class: left, middle, inverse
 
-## Sumari
+## Contingut
 
 - .brown[L'eina]
 
@@ -352,7 +352,7 @@ No hi ha precedència d'operadors en Clojure; no calen degut a la notació.
 ---
 class: left, middle, inverse
 
-## Sumari
+## Contingut
 
 - .brown[L'eina]
 
@@ -466,7 +466,7 @@ El `let` serveix per crear un lligam (*binding*) en un context (*scope*) lèxic.
 ---
 class: left, middle, inverse
 
-## Sumari
+## Contingut
 
 - .brown[L'eina]
 
@@ -535,7 +535,7 @@ o
 ---
 class: left, middle, inverse
 
-## Sumari
+## Contingut
 
 - .brown[L'eina]
 
@@ -576,7 +576,7 @@ class: left, middle, inverse
 ---
 class: left, middle, inverse
 
-## Sumari
+## Contingut
 
 - .brown[L'eina]
 

@@ -20,7 +20,7 @@ Universitat Politècnica de Catalunya
 
 ---
 
-## Sumari
+## Contingut
 
 - [Introducció a Clojure](introduccio.html) (2 setmanes) <br>
 .small[L'eina. Tipus bàsics i expressions. Funcions, locals, llistes i condicionals. Recursivitat. Tractament d'excepcions. Exercicis.]

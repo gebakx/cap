@@ -21,7 +21,7 @@ Universitat Politècnica de Catalunya
 ---
 class: left, middle, inverse
 
-## Sumari
+## Contingut
 
 - .cyan[Funcions *First-Class*]
 
@@ -69,7 +69,7 @@ class: left, middle, inverse
 ---
 class: left, middle, inverse
 
-## Sumari
+## Contingut
 
 - .brown[Funcions *First-Class*]
 
@@ -110,7 +110,7 @@ Abstracció que representa una vista sobre les col·leccions.
 ---
 class: left, middle, inverse
 
-## Sumari
+## Contingut
 
 - .brown[Funcions *First-Class*]
 
@@ -264,7 +264,7 @@ Mira si un predicat es satisfà per tots els elements d'una seqüència.
 ---
 class: left, middle, inverse
 
-## Sumari
+## Contingut
 
 - .brown[Funcions *First-Class*]
 
@@ -309,7 +309,7 @@ Es pot aplicar a altres col·leccions.
 ---
 class: left, middle, inverse
 
-## Sumari
+## Contingut
 
 - .brown[Funcions *First-Class*]
 
