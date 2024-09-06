@@ -179,7 +179,7 @@ Obté els primers elements consecutius d'una seqüència que satisfan un predica
 
 ### `reduce`
 
-Desplega un operador `⊕` a una llista $[x_1, x_2, ..., x_n]$ donant el resultat $((x1 ⊕ x2) ⊕ ...) ⊕ xn$.
+Desplega un operador `⊕` a una llista $(x_1 x_2 ... x_n)$ donant el resultat $((x1 ⊕ x2) ⊕ ...) ⊕ xn$.
 
 **Exemples**:
 
