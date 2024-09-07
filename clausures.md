@@ -57,7 +57,7 @@ Fixeu-vos en que si la funció interna tornés només una funció, no funcionari
 
 ---
 
-# Models d'entorns
+# Python Tutor
 
 Podeu veure com funciona pas a pas utilitzant l'eina:
 
@@ -87,11 +87,64 @@ class: left, middle, inverse
 
 ---
 
-# Exercicis
+# Exercici 1
 
-- Dir que mostra un exemple.
+- Executa aquest codi i justifica el resultat que mostra.
 
-- Punts amb clausures i distància euclidea.
+    ```clojure
+    (ns misteri)
+
+    (defn misteri [n]
+      (let [secret 4
+            n (+ n 2)]
+        (fn [mult]
+          (* secret (* mult n)))))
+
+    (defn misteri3 [param]
+      (fn [bonus]
+        (+ (param 6) bonus)))
+
+    (let [h (misteri 3)
+          j (misteri3 h)
+          result (j 2)]
+      (println result))
+    ```
+
+---
+
+# Exercici 2
+
+Es poden utilitzar clausures per definir objectes sense classe. En aquest problema definirem l'"objecte" per representar punts en el pla amb clausures. Així fent `(punt 2 2)` ens tornarà una instància amb les coordenades cartesianes {2, 2}.
+
+- Afegiu la funcionalitat tal que a l'aplicar les *keywords* (a l'estil dels mètodes) `:crt` o `:plr` per obtenir les coordenades cartesianes o polars respectivament.
+
+    ```clojure
+    ((punt 2 0) :crt)  👉  (2 0)
+
+    ((punt 2 0) :plr)  👉  (2.0 0.0)
+
+    ((punt 2 2) :crt)  👉  (2 2)
+
+    ((punt 2 2) :plr)  👉  (2.8284271247461903 45.0)
+    ```
+
+---
+
+# Exercici 2bis
+
+- Afegiu la possibilitat de calcular distàncies euclidianes amb la *keyword* `:dst`.
+
+    ```clojure
+    ((punt 2 2) :plr)  👉  (2.8284271247461903 45.0)
+
+    ((punt 2 0) :dst (punt 2 0))  👉  0.0
+    ```
+
+- Doneu una funció `mes-propera` que, donada una llista de punts i un punt, ens torni el punt de la llista més proper al donat com a paràmetre.
+
+---
+
+# Més exercicis
 
 - `my-partial`
 
