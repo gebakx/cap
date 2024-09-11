@@ -135,12 +135,17 @@ Es poden utilitzar clausures per definir objectes sense classe. En aquest proble
 - Afegiu la possibilitat de calcular distàncies euclidianes amb la *keyword* `:dst`.
 
     ```clojure
-    ((punt 2 2) :plr)  👉  (2.8284271247461903 45.0)
+    ((punt 2 2) :dst (punt 2 0))  👉  2.0
 
     ((punt 2 0) :dst (punt 2 0))  👉  0.0
     ```
 
 - Doneu una funció `mes-propera` que, donada una llista de punts i un punt, ens torni el punt de la llista més proper al donat com a paràmetre.
+
+    ```clojure
+    (mes-propera (punt 2 0) (list (punt 1 1) (punt 2 1) (punt 3 2)))
+    👉  (2 1)
+    ```
 
 ---
 
