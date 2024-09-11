@@ -151,7 +151,7 @@ Es poden utilitzar clausures per definir objectes sense classe. En aquest proble
 
 # Exercici 3
 
-Estudieu aquest codi i mireu que fa cada component que apareix a la funció `memoize`:
+Estudieu aquest codi i justifiqueu perquè funciona:
 
 ```clojure
 (defn memoize [f]
@@ -174,9 +174,10 @@ user=> "Elapsed time: 941.445 msecs"
 (def fib (memoize fib))
 
 (time (fib 35))
-
 user=> "Elapsed time: 0.044 msecs"
 ```
+
+.footnote[font: [Clojure - Atoms](https://clojure.org/reference/atoms)]
 
 ---
 
