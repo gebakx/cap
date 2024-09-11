@@ -151,5 +151,12 @@ Es poden utilitzar clausures per definir objectes sense classe. En aquest proble
 
 # Més exercicis
 
-- `my-partial`
+- Implementeu una funció `my-partial` que faci el mateix que la funció clojure `partial`:
 
+    ```clojure
+    ((my-partial * 2) 4)  👉  8
+
+    ((my-partial * 2) 4 3)  👉  24
+    ```
+
+- `memoize`?
