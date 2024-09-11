@@ -191,4 +191,4 @@ user=> "Elapsed time: 0.044 msecs"
     ((my-partial * 2) 4 3)  👉  24
     ```
 
-- `memoize`?
+
