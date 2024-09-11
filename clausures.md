@@ -149,6 +149,37 @@ Es poden utilitzar clausures per definir objectes sense classe. En aquest proble
 
 ---
 
+# Exercici 3
+
+Estudieu aquest codi i mireu que fa cada component que apareix a la funció `memoize`:
+
+```clojure
+(defn memoize [f]
+  (let [mem (atom {})]
+    (fn [& args]
+      (if-let [e (find @mem args)]
+        (val e)
+        (let [ret (apply f args)]
+          (swap! mem assoc args ret)
+          ret)))))
+
+(defn fib [n]
+  (if (<= n 1)
+    n
+    (+ (fib (dec n)) (fib (- n 2)))))
+
+(time (fib 35))
+user=> "Elapsed time: 941.445 msecs"
+
+(def fib (memoize fib))
+
+(time (fib 35))
+
+user=> "Elapsed time: 0.044 msecs"
+```
+
+---
+
 # Més exercicis
 
 - Implementeu una funció `my-partial` que faci el mateix que la funció clojure `partial`:
