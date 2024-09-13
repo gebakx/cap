@@ -608,5 +608,4 @@ class: left, middle, inverse
 
 7. [Funcions amb llistes 2](problemes/llistes2.pdf)
 
-8. [Fibonacci](problemes/fibonacci.pdf)
 
