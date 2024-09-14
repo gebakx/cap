@@ -608,4 +608,39 @@ class: left, middle, inverse
 
 7. [Funcions amb llistes 2](problemes/llistes2.pdf)
 
+---
 
+# Exercici
+
+**Avaluació post-fixa**:
+
+.cols5050[
+.col1[
+- Feu una funció en Clojure que avalui una expressió escrita en notació postfixa amb només nombres naturalsi  operadors de suma, resta, producte i divisió.
+]
+.col2[
+| Entrada                  | Sortida |
+|:------------------------ |:------- |
+| `(post-fixa "10 1 + 2 *")` | 22      |
+| `(post-fixa "2 10 1 + *")` | 22      |
+| `(post-fixa "3 4 + 7 11 * + 2 2 - *")` | 0       |
+| `(post-fixa "4 3 -")`                  | 1       |
+| `(post-fixa "12 3 /")`                 | 4       |
+]]
+
+<br>
+
+.cols5050[
+.col1[
+- Modifiqueu l'exercici anterior per a que tracti els possibles errors mitjançant excepcions.
+]
+.col2[
+| Error  | Descripció                   | Exemple |
+|:------ |:---------------------------- |:---|
+| `neg`  | resultat negatiu d'una resta | `3 4 -`  |
+| `div0` | divisió per zero             | `12 0 /` |
+| `divE` | divisió no entera            | `12 5 /` |
+| `2ops` | es necessiten 2 operands     | `3 +` |
+| `NaN`  | Not a Number                 | `a +` |
+| `Op?!` | falta un operador            | `3 4` |
+]]
