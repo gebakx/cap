@@ -100,7 +100,7 @@ user=>
 
 ---
 
-# Linia de comandes
+# Línia de comandes
 
 **Expressions**:
 
@@ -285,7 +285,7 @@ No hi ha precedència d'operadors en Clojure; no calen degut a la notació.
 
 .cols5050[
 .col1[
-## Casting
+## Càsting
 
 ```clojure
 (/ 5 2)  👉  5/2
@@ -449,7 +449,7 @@ El `let` serveix per crear un lligam (*binding*) en un context (*scope*) lèxic.
 👉  "parell"
 ```
 
-**Multiple**:
+**Múltiple**:
 
 ```clojure
 (defn signe [x]
@@ -616,7 +616,7 @@ class: left, middle, inverse
 
 .cols5050[
 .col1[
-- Feu una funció en Clojure que avalui una expressió escrita en notació postfixa amb només nombres naturalsi  operadors de suma, resta, producte i divisió.
+- Feu una funció en Clojure que avaluï una expressió escrita en notació postfixa amb només nombres naturals i operadors de suma, resta, producte i divisió.
 ]
 .col2[
 | Entrada                  | Sortida |

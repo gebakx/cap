@@ -325,7 +325,9 @@ class: left, middle, inverse
 
 # Exercicis
 
-- [Funcions d'ordre superior](problemes/first-class.pdf)
+1. [Funcions d'ordre superior](problemes/first-class.pdf)
 
-- [Llistes per comprensió](problemes/llistes-comprensio.pdf)
+2. [Llistes per comprensió](problemes/llistes-comprensio.pdf)
+
+
 

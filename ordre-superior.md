@@ -102,9 +102,9 @@ class: left, middle, inverse
 ```
 ]]
 
-- **Tail Recursion Optimization**: optimització en que el compilador sustitueix la crida per recursiva per un salt. 
+- **Tail Recursion Optimization**: optimització en que el compilador substitueix la crida per recursiva per un salt. 
 
-- Clojure no ho suporta degut a l'arquetectura de la *JVM*
+- Clojure no ho suporta degut a l'arquitectura de la *JVM*
 
 - Altra opció és passar-la a **iterativa**...
 

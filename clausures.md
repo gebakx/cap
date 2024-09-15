@@ -32,7 +32,7 @@ class: left, middle, inverse
 # Clausures
 
 `fn` crea clausures (*closure*):
-- tanca l'abast (*scope*) lèxic del voltant i captura els sus valors.
+- tanca l'abast (*scope*) lèxic del voltant i captura els seus valors.
 
 .cols5050[
 .col1[
