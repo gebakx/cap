@@ -644,3 +644,23 @@ class: left, middle, inverse
 | `NaN`  | Not a Number                 | `a +` |
 | `Op?!` | falta un operador            | `3 4` |
 ]]
+
+---
+
+# Exercici
+
+## _Destructuring_
+
+Estudieu el concepte de **_destructuring_** (_desestructuració_?)
+
+Referències:
+
+* The Joy of Clojure (2nd. ed.) Cap. 3, sec. 3.3
+* https://clojure.org/reference/special_forms , secció _Binding Forms (Destructuring)_
+* https://clojure.org/guides/destructuring (no la darrera secció de Macros)
+* https://john2x.com/blog/clojure-destructuring.html
+
+És molt útil i ho farem servir, sobre tot a la definició de funcions i en les
+`binding-forms` del `let`.
+
+A classe de laboratori resoldrem els dubtes que us puguin sorgir.
