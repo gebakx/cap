@@ -156,6 +156,8 @@ class: left, middle, inverse
 (distancia '{:x 2 :y 2} '{:x 1 :y 2})  👉  1.0
 ```
 
+.small[[Documentació Destructuring](https://clojure.org/guides/destructuring)]
+
 ---
 class: left, middle, inverse
 
