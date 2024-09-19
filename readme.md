@@ -34,7 +34,7 @@ Universitat Politècnica de Catalunya
 - [Funcions d'ordre superior](ordre-superior.html) (2 setmanes) <br>
 .small[Composició i *Pipelining*. *Tail Call Optimisation*. *Continuation-Passing Style*. *Trampolining*. Exercicis.]
 
-- Immutabilitat i estructures de dades (1 setmana) <br>
+- [Immutabilitat i estructures de dades](immutabilitat.html) (1 setmana) <br>
 .small[Exercicis.]
 
 - Avaluació mandrosa (1 setmana) <br>
