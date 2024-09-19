@@ -82,7 +82,7 @@ La **immutabilitat** ajuda en la definició de **funcions pures**.
 
 .center[![:scale 70%](figures/shared-trees.png)]
 
-.small[.blue[Font]: The Joy of Clojure.]
+.center[.small[.blue[Font]: The Joy of Clojure.]]
 
 - Concurrència i paral·lelisme:
   - Estr. de dades compartides
