@@ -27,6 +27,8 @@ class: left, middle, inverse
 
 - Seqüències i col·leccions
 
+- *Destructuring*
+
 - Funcions d'ordre superior habituals
 
 - Llistes per comprensió
@@ -75,6 +77,8 @@ class: left, middle, inverse
 
 - .cyan[Seqüències i col·leccions]
 
+- *Destructuring*
+
 - Funcions d'ordre superior habituals
 
 - Llistes per comprensió
@@ -115,6 +119,53 @@ class: left, middle, inverse
 - .brown[Funcions *First-Class*]
 
 - .brown[Seqüències i col·leccions]
+
+- .brown[Funcions d'ordre superior habituals]
+
+- .cyan[*Destructuring*]
+
+- Llistes per comprensió
+
+- Exercicis
+
+---
+
+# Destructuring
+
+És una forma de crear *bindings* a valors a partir d'estructures.
+
+**Sequential destructuring**:
+
+```clojure
+(defn distancia [va vb]
+    (let [[ax ay] va
+          [bx by] vb]
+        (Math/sqrt (+ (Math/pow (- ax bx) 2) (Math/pow (- ay by) 2)))))
+
+(distancia '(2 2) '(1 2))  👉  1.0
+```
+
+**Associative destructuring**:
+
+```clojure
+(defn distancia [va vb]
+    (let [{ax :x ay :y} va
+          {bx :x by :y} vb]
+        (Math/sqrt (+ (Math/pow (- ax bx) 2) (Math/pow (- ay by) 2)))))
+
+(distancia '{:x 2 :y 2} '{:x 1 :y 2})  👉  1.0
+```
+
+---
+class: left, middle, inverse
+
+## Contingut
+
+- .brown[Funcions *First-Class*]
+
+- .brown[Seqüències i col·leccions]
+
+- .brown[*Destructuring*]
 
 - .cyan[Funcions d'ordre superior habituals]
 
@@ -270,6 +321,8 @@ class: left, middle, inverse
 
 - .brown[Seqüències i col·leccions]
 
+- .brown[*Destructuring*]
+
 - .brown[Funcions d'ordre superior habituals]
 
 - .cyan[Llistes per comprensió]
@@ -314,6 +367,8 @@ class: left, middle, inverse
 - .brown[Funcions *First-Class*]
 
 - .brown[Seqüències i col·leccions]
+
+- .brown[*Destructuring*]
 
 - .brown[Funcions d'ordre superior habituals]
 
