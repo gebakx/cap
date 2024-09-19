@@ -558,9 +558,9 @@ class: left, middle, inverse
 ```clojure
 (try 
   (/ 2 0) 
-  (catch ArithmeticException e "divide by zero"))
+  (catch Exception e (.getMessage e)))
 
-👉  "divide by zero"
+👉  "Divide by zero"
 ```
 
 **Llançament**:
