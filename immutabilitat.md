@@ -111,6 +111,6 @@ class: left, middle, inverse
 
 # Exercicis
 
-1. [Arbre binari](problemes/nombres.pdf)
+1. [Arbre binari](problemes/arbre-binari.pdf)
 
 2. Expressions

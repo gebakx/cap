@@ -35,7 +35,7 @@ Universitat Politècnica de Catalunya
 .small[Composició i *Pipelining*. *Tail Call Optimisation*. *Continuation-Passing Style*. *Trampolining*. Exercicis.]
 
 - [Immutabilitat i estructures de dades](immutabilitat.html) (1 setmana) <br>
-.small[Exercicis.]
+.small[Immutabilitat. Exercicis.]
 
 - Avaluació mandrosa (1 setmana) <br>
 .small[Seqüències mandroses. Exercicis.]
