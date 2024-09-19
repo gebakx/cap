@@ -2,7 +2,7 @@ class: center, middle
 
 ## Conceptes Avançats de Programació
 
-# Immutabilitat i estructures de dades
+# Immutabilitat
 
 <br>
 
@@ -35,7 +35,7 @@ class: left, middle, inverse
 
 - Objecte **immutable**: una vegada creat, no es pot canviar el seu estat.
 
-- Essencialment, **immutabilitat** vol dir que una vegada assignem una valor a una variable, aquest valor no es podrà canviar durant el curs de la seva existència.
+- **Immutabilitat**: el valor d'una variable no es pot canviar un cop assignat en la creació.
 
 **Exemple**:
 
@@ -52,9 +52,9 @@ class: left, middle, inverse
 
 # Programació funcional
 
-Una de les característiques de la programació funcional és la de la creació de **funcions pures** per crear codi més segur.
+Molta importància a la creació de **funcions pures** per crear codi més segur.
 
-- S'intenta separar o aïllar la noció d'estat.
+- S'intenta separar o aïllar la noció d'estat (funcions impures).
 
 - L'estat és el responsable més gran dels efectes laterals.
 
@@ -64,39 +64,38 @@ Una de les característiques de la programació funcional és la de la creació 
 
   - No modifiquen dades de fora el seu àmbit (*scope*).
 
----
+<br>
 
-# Immutabilitat i programació funcional
-
-La immutabilitat sempre a estat preferent en el món de la programació funcional, ajudant a la definició de funcions pures.
-
-- Ajuda a fer més codi més predecible;
-  - evitant canvis de dades impredictibles, i
-  - permetent el raonament sobre el codi.
-
-- Ajuda en la compartició de dades.
-
-.center[![:scale 40%](figures/shared-trees.png)]
-
-- Programació concurrent i paral·lela:
-
-  - Accés i manipulació d'estructures de dades compartides
+La **immutabilitat** ajuda en la definició de **funcions pures**.
 
 ---
 
-# Consideracions finals
+.cols5050[
+.col1[
+## Avantatges 
 
-**Reptes**:
+- Codi més predecible;
+  - evita canvis de dades, i
+  - raonament sobre el codi.
 
-- La creació de noves estructures de dades pot dur a **problemes d'espai**. Els llenguatges funcionals moderns estan treballant en tècniques per minimitzar l'impacte mitjançant optimització o comparició de dades.
+- Compartició de dades.
 
-- En aplicacions intensives, la creació de noves instàncies pot arribar a ser un problema seriós. Tècniques com l'avaluació mandrosa, cachés o memoizatció poden ajudar a minimitzar aquest impacte.
+.center[![:scale 70%](figures/shared-trees.png)]
 
-**Conclusions**:
+- Concurrència i paral·lelisme:
+  - Estr. de dades compartides
+  - Menys conflictes
+]
+.col2[
+## Reptes
 
-- Tot i aquests reptes, l'ús de l'immutabilitat i la programació funcional continua sent un dels fronts actius de les pràctiques de programació moderna.
+- **Problemes d'espai**: <br>
+  Es minimitza l'impacte mitjançant optimització o compartició de dades.
 
-- Un dels àmbits més actius està en la programació concurrent i paral·lela.
+- **Eficiència**: <br>
+  La creació de noves instàncies pot arribar a ser un problema. <br>
+  Avaluació mandrosa, cachés o memoització poden ajudar a minimitzar aquest impacte.
+]]
 
 ---
 class: left, middle, inverse
