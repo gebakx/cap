@@ -137,23 +137,26 @@ class: left, middle, inverse
 **Sequential destructuring**:
 
 ```clojure
-(defn distancia [va vb]
-    (let [[ax ay] va
-          [bx by] vb]
-        (Math/sqrt (+ (Math/pow (- ax bx) 2) (Math/pow (- ay by) 2)))))
+(defn preu [v]
+    (let [[quantitat preu-unitari] v]
+        (* quantitat preu-unitari)))
 
-(distancia '(2 2) '(1 2))  👉  1.0
+(preu '(2 3.50))  👉  7.0
+```
+
+**Sequential amb cua**:
+
+```clojure
+(let [[x y & z] (range 5)]
+    (list (list x y) z))  👉  ((0 1) (2 3 4))
 ```
 
 **Associative destructuring**:
 
 ```clojure
-(defn distancia [va vb]
-    (let [{ax :x ay :y} va
-          {bx :x by :y} vb]
-        (Math/sqrt (+ (Math/pow (- ax bx) 2) (Math/pow (- ay by) 2)))))
-
-(distancia '{:x 2 :y 2} '{:x 1 :y 2})  👉  1.0
+(let [{quantitat :quantitat preu-unitari :preu-unitari} 
+      {:quantitat 3 :preu-unitari 3.50}]
+    (* quantitat preu-unitari))  👉  10.5
 ```
 
 .small[[Documentació Destructuring](https://clojure.org/guides/destructuring)]
