@@ -115,3 +115,21 @@ class: left, middle, inverse
 1. [Arbre binari](problemes/arbre-binari.pdf)
 
 2. Expressions
+
+  Es vol tenir un mòdul per a manipular i avaluar expressions d’enters amb operacions de suma, resta, multiplicació i divisió. Volem tractar expressions com les definides a la gramàtica següent:
+
+  `expr ::= (:val int) | (:add expr expr) | (:sub expr expr) | (:mul expr expr) | (:div expr expr)`
+
+  Per exemple, `(:add (:val 3) (:div (:val 4) (:val 2)))` representa $3 + 4/2$, que s’avalua a $5$.
+
+  Definiu una funció @avalua@ que, donada una "expr", retorni la seva avaluació. En el cas de que es produeixi una divisió per zero, hauria de llançar una excepció "div0" per indicar-ho.
+
+  **Joc de probes**:
+
+  | expressió | resultat |
+  |:---|:---|
+  | `(avalua '(:add (:val 2) (:val 3)))` | `5` |
+  | `(avalua '(:mul (:add (:val 2) (:val 3)) (:sub (:val 2) (:val 3)))` | `-5` |
+  | `(avalua '(:add (:div (:val 4) (:val 0)) (:val 3)))` | "div0" |
+
+
