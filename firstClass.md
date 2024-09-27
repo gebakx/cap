@@ -58,10 +58,7 @@ class: left, middle, inverse
 ```
 
 ```clojure
-(def m2
-  ((fn [x]            ; retorna una funció
-      #(* x %)) 
-    2))
+(def m2 (fn [x] (* x 2)))  ; retorna la funció
 
 (m2 3)  👉  6
 ```
