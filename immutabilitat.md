@@ -114,11 +114,12 @@ class: left, middle, inverse
 
 1. [Arbre binari](problemes/arbre-binari.pdf)
 
-2. Es vol tenir un mòdul per a manipular i avaluar expressions d’enters amb operacions: +, -, *, /:
+2. Es vol tenir un mòdul per avaluar expressions amb operacions: +, -, *, /:
 
-  `expr ::= (:val int) | (:add expr expr) | (:sub expr expr) | (:mul expr expr) | (:div expr expr)`
+  `expr ::= (:val int) | (:add expr expr) | (:sub expr expr) |`
+  `         (:mul expr expr) | (:div expr expr)`
 
-  $3 + 4/2 \rightarrow$ `(:add (:val 3) (:div (:val 4) (:val 2)))  👉  5`.
+  $3 + 4/2 \rightarrow$ `(:add (:val 3) (:div (:val 4) (:val 2)))  👉  5`
 
   Definiu una funció `avalua` que, donada una "expr", retorni la seva avaluació. En el cas de que es produeixi una divisió per zero, hauria de llançar una excepció "div0" per indicar-ho.
 
