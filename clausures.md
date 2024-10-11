@@ -157,7 +157,7 @@ Es poden utilitzar clausures per definir objectes sense classe. En aquest proble
 
 ---
 
-# Exercici 4
+# Exercici 3
 
 - Implementeu una funció `my-partial` que faci el mateix que la funció clojure `partial`:
 
@@ -166,6 +166,19 @@ Es poden utilitzar clausures per definir objectes sense classe. En aquest proble
 
     ((my-partial * 2) 4 3)  👉  24
     ```
+
+---
+class: left, middle, inverse
+
+## Sumari
+
+- .brown[Sessió 5]
+
+- .cyan[Sessió 6]
+
+  - .cyan[Clausures amb mutabilitat]
+
+  - Exercicis
 
 ---
 class: left, middle, inverse
