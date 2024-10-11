@@ -406,3 +406,8 @@ class: left, middle, inverse
 8. [Funcions d'ordre superior](problemes/first-class.pdf)
 
 9. [Llistes per comprensió](problemes/llistes-comprensio.pdf)
+
+10. Definiu una funció que converteixi un número romà al seu enter equivalent amb funcions d'ordre superior.
+  Recordeu que els números romans s’escriuen amb els símbols I, V, X, L, C, D i M, amb valors 1, 5, 10, 50, 100, 500 i 1000 respectivament. En aquest sistema, per obtenir el nombre representat, se sumen els valors dels símbols, excepte els símbols situats a l’esquerra d’un símbol de valor més gran, que es resten.
+
+
