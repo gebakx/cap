@@ -23,9 +23,13 @@ class: left, middle, inverse
 
 ## Sumari
 
-- .cyan[Clausures]
+- .cyan[Sessió 5]
 
-- Exercicis
+  - .cyan[Clausures]
+
+  - Exercicis
+
+- Sessió 6
 
 ---
 
@@ -81,9 +85,13 @@ class: left, middle, inverse
 
 ## Sumari
 
-- .brown[Clausures]
+- Sessió 5
 
-- .cyan[Exercicis]
+  - .brown[Clausures]
+
+  - .cyan[Exercicis]
+
+- Sessió 6
 
 ---
 
@@ -149,7 +157,32 @@ Es poden utilitzar clausures per definir objectes sense classe. En aquest proble
 
 ---
 
-# Exercici 3
+# Exercici 4
+
+- Implementeu una funció `my-partial` que faci el mateix que la funció clojure `partial`:
+
+    ```clojure
+    ((my-partial * 2) 4)  👉  8
+
+    ((my-partial * 2) 4 3)  👉  24
+    ```
+
+---
+class: left, middle, inverse
+
+## Sumari
+
+- .brown[Sessió 5]
+
+- .cyan[Sessió 6]
+
+  - .brown[Clausures amb mutabilitat]
+
+  - .cyan[Exercicis]
+
+---
+
+# Exercici
 
 Estudieu aquest codi i justifiqueu perquè funciona:
 
@@ -179,16 +212,5 @@ user=> "Elapsed time: 0.044 msecs"
 
 .footnote[font: [Clojure - Atoms](https://clojure.org/reference/atoms)]
 
----
-
-# Més exercicis
-
-- Implementeu una funció `my-partial` que faci el mateix que la funció clojure `partial`:
-
-    ```clojure
-    ((my-partial * 2) 4)  👉  8
-
-    ((my-partial * 2) 4 3)  👉  24
-    ```
 
 
