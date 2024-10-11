@@ -349,11 +349,11 @@ class: left, middle, inverse
 ```
 
 ```clojure
-(for [x (range 1 6) :when even?] (* x x))  👉  (1 4 9 16 25)    ; tipus filter
+(for [x (range 1 6) :when (even? x)] (* x x))  👉  (4 16)    ; tipus filter
 ```
 
 ```clojure
-(for [x (range 3) y (range 3)] x y)                             ; cartesià
+(for [x (range 3) y (range 3)] [x y])                             ; cartesià
 👉
 ([0 0] [0 1] [0 2] 
  [1 0] [1 1] [1 2] 
