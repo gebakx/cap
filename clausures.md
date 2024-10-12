@@ -176,9 +176,58 @@ class: left, middle, inverse
 
 - .cyan[Sessió 6]
 
-  - .cyan[Clausures amb mutabilitat]
+  - .cyan[Atoms]
 
   - Exercicis
+
+---
+
+# Atoms
+
+Els atoms són objectes que contenen referències a valors. Ens permetran afegir mutabilitat a les clausures.
+
+.cols5050[
+.col1[
+**Inicialització**:
+
+```clojure
+(atom 0)
+```
+
+```clojure
+(def comptador (atom 0))      ; global
+
+(let [comptador (atom 0)]     ; local
+  ...)
+```
+
+**Accés**:
+
+```clojure
+(deref comptador)  👉  0
+
+@comptador  👉  0
+```
+]
+.col2[
+**Modificació amb funció**:
+
+```clojure
+(swap! comptador #(+ % 1)) 👉 1
+
+(swap! comptador inc)  👉  2
+```
+
+<br>
+
+**Modificació amb valor**:
+
+```clojure
+(reset! comptador 3)  👉  3
+```
+
+]]
+
 
 ---
 class: left, middle, inverse
@@ -189,13 +238,13 @@ class: left, middle, inverse
 
 - .cyan[Sessió 6]
 
-  - .brown[Clausures amb mutabilitat]
+  - .brown[Atoms]
 
   - .cyan[Exercicis]
 
 ---
 
-# Exercici
+# Exercici 1
 
 Estudieu aquest codi i justifiqueu perquè funciona:
 
@@ -225,5 +274,27 @@ user=> "Elapsed time: 0.044 msecs"
 
 .footnote[font: [Clojure - Atoms](https://clojure.org/reference/atoms)]
 
+---
 
+# Exercici 2
 
+- Feu una versió mutable de l'exercici 2 (punt) de la sessió 5.
+
+- Han de continuar funcionant els "mètodes": `:crt`, `:plr` i `:dst`. 
+
+- Afegiu tres "mètodes" nous:
+
+  - `:rst`: que inicialitzi el punt a (0, 0).
+
+  - `:inx`: que incrementi la coordenada x en 1.
+
+  - `:iny`: que incrementi la coordenada y en 1.
+
+```clojure
+(use 'punts2 :reload-all)
+(def p (punt))
+(p :inx)  👉  [1 0]
+(def q (punt))
+(q :iny)  👉  [0 1]
+(p :dst q)  👉  1.4142135623730951
+```
