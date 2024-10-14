@@ -372,7 +372,7 @@ class: left, middle, inverse
 
 - Definiu una versió `iter_fib` iterativa amb `recur`.
 
-- Definiu una versió `cps_fib` amb *continuation-passing style`.
+- Definiu una versió `cps_fib` amb *continuation-passing style*.
 
 - Definiu una versió `cps2_fib` per utilitzar amb la funció `trampoline`.
 
