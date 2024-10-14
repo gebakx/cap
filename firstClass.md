@@ -291,6 +291,35 @@ Torna una funció derivada de fixar paràmetres d'una altra funció que rep com 
 
 # Funcions d'ordre superior habituals
 
+### `yuxt` 
+
+Retorna la justaposició de l'aplicació d'una sèrie de funcions a valors.
+
+```clojure
+((juxt a b c) x) => [(a x) (b x) (c x)]
+```
+
+**Exemple**:
+
+```clojure
+((juxt (partial filter even?) (partial filter odd?)) (range 10))
+👉  [(0 2 4 6 8) (1 3 5 7 9)]
+```
+
+### `every?`
+
+Mira si un predicat es satisfà per tots els elements d'una seqüència.
+
+**Exemple**:
+
+```clojure
+(every? even? '(2 4 6))  👉  true
+```
+
+---
+
+# Funcions d'ordre superior habituals
+
 ### `comp` 
 
 Composició de funcions.
@@ -305,16 +334,6 @@ Composició de funcions.
 (def tres-mes-grans (comp (partial take 3) reverse sort))
 
 (tres-mes-grans '(3 1 2 6 7))  👉  (7 6 3)
-```
-
-### `every?`
-
-Mira si un predicat es satisfà per tots els elements d'una seqüència.
-
-**Exemple**:
-
-```clojure
-(every? even? '(2 4 6))  👉  true
 ```
 
 ---
