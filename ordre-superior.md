@@ -358,7 +358,7 @@ class: left, middle, inverse
 
   - .brown[*Trampolining*]
 
-  - .cyanExercicis]
+  - .cyan[Exercicis]
 
 ---
 
