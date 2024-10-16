@@ -37,8 +37,8 @@ Universitat Politècnica de Catalunya
 - [Immutabilitat](immutabilitat.html) (1 setmana) <br>
 .small[Immutabilitat. Exercicis.]
 
-- Avaluació mandrosa (1 setmana) <br>
-.small[Seqüències mandroses. Exercicis.]
+- [Avaluació mandrosa](lazy.html) (1 setmana) <br>
+.small[Avaluació mandrosa. Seqüències mandroses. Exercicis.]
 
 - Macros (2 setmanes) <br>
 .small[Macros. Exercicis.]
