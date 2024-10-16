@@ -55,6 +55,52 @@ El *pipelining* és l'encadenament de funcions mitjançant la composició.
 ```
 
 ---
+
+# Macros *thread-first* i *thread-last*
+
+Tenim 2 macros que ens ajuden molt en el *pipelining*:
+
+.cols5050[
+.col1[
+**Thread-first ->**:
+
+```clojure
+(-> a
+    (f b)
+    (g c))
+```
+
+que equival a:
+
+```clojure
+(g (f a b) c)
+```
+]
+.col2[
+**Thread-last ->>**:
+
+```clojure
+(->> a
+    (f b)
+    (g c))
+```
+
+que equival a:
+
+```clojure
+(g c (f b a))
+```
+]]
+
+**Exemple**:
+
+```clojure
+(def tres-mes-grans #(->> % (take 3) reverse sort))
+
+(tres-mes-grans '(3 1 2 6 7))  👉  (1 2 3)
+```
+
+---
 class: left, middle, inverse
 
 ## Sumari
