@@ -291,7 +291,7 @@ Torna una funció derivada de fixar paràmetres d'una altra funció que rep com 
 
 # Funcions d'ordre superior habituals
 
-### `yuxt` 
+### `juxt` 
 
 Retorna la justaposició de l'aplicació d'una sèrie de funcions a valors.
 
