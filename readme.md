@@ -40,6 +40,6 @@ Universitat Politècnica de Catalunya
 - Avaluació mandrosa (1 setmana) <br>
 .small[Seqüències mandroses. Exercicis.]
 
-- Macros (3 setmanes) <br>
+- Macros (2 setmanes) <br>
 .small[Macros. Exercicis.]
 
