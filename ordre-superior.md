@@ -97,7 +97,7 @@ que equival a:
 ```clojure
 (def tres-mes-grans #(->> % sort reverse (take 3)))
 
-(tres-mes-grans '(3 1 2 6 7))  👉  (1 2 3)
+(tres-mes-grans '(3 1 2 6 7))  👉  (7 6 3)
 ```
 
 ---
