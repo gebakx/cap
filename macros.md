@@ -87,17 +87,19 @@ Les macros són la descripció d'un patró que permet reemplaçar una part de co
 
 # Expansió
 
-- (macroexpand-1 form)
-    If form represents a macro form, returns its expansion, else returns form.
+- `(macroexpand form)`: eina per expandir les macros.
 
-- (macroexpand form)
-    Repeatedly calls macroexpand-1 on form until it no longer
-    represents a macro form, then returns it.  Note neither
-    macroexpand-1 nor macroexpand expand macros in subforms.
+- Permet veure la implementació de les macros del sistema.
+
+- Molt útil per depurar el procés de creació de macros.
+
+**Exemple**:
 
 ```clojure
 (-> {} (assoc :a 1) (assoc :b 2))
 {:b 2, :a 1}
+
+👉
 
 (macroexpand '(-> {} (assoc :a 1) (assoc :b 2)))
 (assoc (assoc {} :a 1) :b 2)
@@ -105,12 +107,8 @@ Les macros són la descripció d'un patró que permet reemplaçar una part de co
 
 ---
 
-# Quoting
+# Sintaxi
 
-
----
-
-# Definició
 
 ```clojure
 (defmacro when
@@ -120,9 +118,23 @@ Les macros són la descripció d'un patró que permet reemplaçar una part de co
   (list 'if test (cons 'do body)))
 ```
 
+```clojure
+(defmacro or
+  "Evaluates exprs one at a time, from left to right. If a form
+  returns a logical true value, or returns that value and doesn't
+  evaluate any of the other expressions, otherwise it returns the
+  value of the last expression. (or) returns nil."
+  {:added "1.0"}
+  ([] nil)
+  ([x] x)
+  ([x & next]
+      `(let [or# ~x]
+         (if or# or# (or ~@next)))))
+```
+
 ---
 
-### Gensym
+# Gensym
 
 ---
 
@@ -199,8 +211,6 @@ Definiu les macros que tinguin el comportament següent:
 # Exercicis
 
 Definiu les macros que tinguin el comportament següent:
-
-**Decorador memoize**:
 
 
 **Point-free**:
