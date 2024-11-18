@@ -175,7 +175,7 @@ Les macros són la descripció d'un patró que permet reemplaçar una part de co
 
 ---
 
-# Exemple amb símbols
+# Macros amb símbols
 
 .blue[Auto-gensym]: per generar noms "únics"
 
@@ -208,6 +208,34 @@ Les macros són la descripció d'un patró que permet reemplaçar una part de co
 ```
 
 ---
+
+# Macros que retornen funcions
+
+**1a opció**:
+
+```clojure
+(defmacro adder [n]
+  `(partial + ~n))
+
+((adder 5) 3)  👉  8
+```
+
+**2a opció**:
+
+```clojure
+(defmacro adder2 [n]
+  `(fn [x#] (+ 5 x#)))
+
+((adder2 5) 3)  👉  8
+```
+
+```clojure
+(macroexpand '(adder2 5))
+👉
+(fn* ([x__470__auto__] (clojure.core/+ 5 x__470__auto__)))
+```
+
+---
 class: left, middle, inverse
 
 ## Sumari
@@ -218,7 +246,7 @@ class: left, middle, inverse
 
 ---
 
-# Exercicis
+# Exercici
 
 Definiu les macros que tinguin el comportament següent:
 
@@ -249,6 +277,31 @@ Definiu les macros que tinguin el comportament següent:
     nil
     ```
 
+---
 
+# Exercici
 
+- **Composició de funcions**:
+
+    ```clojure
+    (def expressio (cf inc +))
+    (expressio 2 4)  👉  7
+    ```
+
+    ```clojure
+    (def producte-escalar (cf (apply +) (map *)))
+    (producte-escalar [1 2 3] [2 2 2])  👉  12
+    ```
+
+    ```clojure
+    (def numParells (cf count (filter even?)))
+    (numParells [2 3 4])  👉  2
+    ```
+
+    Per aquest últim apartat haureu de pensar i implementar la funció `consumeix`:
+
+    ```clojure
+    (def numVegades (cf count (apply filter) (consumeix =)))
+    (numVegades 3 [3 2 3])  👉  2
+    ```
 
