@@ -40,6 +40,6 @@ Universitat Politècnica de Catalunya
 - [Avaluació mandrosa](lazy.html) (1 setmana) <br>
 .small[Avaluació mandrosa. Seqüències mandroses. Exercicis.]
 
-- Macros (2 setmanes) <br>
+- [Macros](macros.html) (2 setmanes) <br>
 .small[Macros. Exercicis.]
 

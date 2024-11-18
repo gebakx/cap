@@ -95,36 +95,98 @@ Les macros són la descripció d'un patró que permet reemplaçar una part de co
 
 **Exemple**:
 
-```clojure
-(-> {} (assoc :a 1) (assoc :b 2))
-{:b 2, :a 1}
+- Thread-first
 
-👉
+    ```clojure
+    (-> {} (assoc :a 1) (assoc :b 2))
+    👉
+    {:b 2, :a 1}
+    ```
 
-(macroexpand '(-> {} (assoc :a 1) (assoc :b 2)))
-(assoc (assoc {} :a 1) :b 2)
-```
+- Expansió
+
+    ```clojure
+    (macroexpand '(-> {} (assoc :a 1) (assoc :b 2)))
+    👉
+    (assoc (assoc {} :a 1) :b 2)
+    ```
 
 ---
 
 # Sintaxi
 
+**Funcions**:
+
+`(defn name doc-string? attr-map? [params*] body)`
+
+**Macros**:
+
+`(defmacro name doc-string? attr-map? [params*] body)`
+
+**Exemple**:
 
 ```clojure
-(defmacro when
-  "Evaluates test. If logical true, evaluates body in an implicit do."
-  {:added "1.0"}
-  [test & body]
-  (list 'if test (cons 'do body)))
+(defmacro my-when
+  [condicio & cos]
+  (list 'if condicio (cons 'do cos)))
 ```
 
 ```clojure
-(defmacro or
-  "Evaluates exprs one at a time, from left to right. If a form
-  returns a logical true value, or returns that value and doesn't
-  evaluate any of the other expressions, otherwise it returns the
-  value of the last expression. (or) returns nil."
-  {:added "1.0"}
+(my-when (not= 0 3) (/ 2 3))  👉  2/3
+```
+
+```clojure
+(macroexpand '(my-when (not= 0 3) (/ 2 3)))
+👉
+(if (not= 0 3) (do (/ 2 3)))
+```
+
+---
+
+# Quoting per macros
+
+- .blue[Quote]: no avalua
+
+    ```clojure
+    '(+ 1 2)  👉  (+ 1 2)
+    ```
+
+- .blue[Syntax-quote]: + *symbol auto-qualification*
+
+    ```clojure
+    `(+ 1 2)  👉  (clojure.core/+ 1 2)
+    ```
+
+- .blue[Unquote]: avalua
+
+    ```clojure
+    `(+ 1 ~(* 2 3))  👉  (clojure.core/+ 1 6)
+    ```
+
+    ```clojure
+    (let [x '(2 3)] `(1 ~x))  👉  (1 (2 3))
+    ```
+
+- .blue[Unquote-splicing]: avalua i aplana
+
+    ```clojure
+    (let [x '(2 3)] `(1 ~@x))  👉  (1 2 3)
+    ```
+
+---
+
+# Exemple amb símbols
+
+.blue[Auto-gensym]: per generar noms "únics"
+
+```clojure
+ `or#  👉  or__153__auto__
+```
+
+**Exemple**:
+
+```clojure
+(defmacro my-or
   ([] nil)
   ([x] x)
   ([x & next]
@@ -132,32 +194,17 @@ Les macros són la descripció d'un patró que permet reemplaçar una part de co
          (if or# or# (or ~@next)))))
 ```
 
----
-
-# Gensym
-
----
-
-# Exemple amb metas??
-
-**thread-last**:
+```clojure
+(my-or true false)  👉  true
+```
 
 ```clojure
-(defmacro ->
-  "Threads the expr through the forms. Inserts x as the
-  second item in the first form, making a list of it if it is not a
-  list already. If there are more forms, inserts the first form as the
-  second item in second form, etc."
-  {:added "1.0"}
-  [x & forms]
-  (loop [x x, forms forms]
-    (if forms
-      (let [form (first forms)
-            threaded (if (seq? form)
-                       (with-meta `(~(first form) ~x ~@(next form)) (meta form))
-                       (list form x))]
-        (recur threaded (next forms)))
-      x)))
+(macroexpand '(my-or true false))
+👉
+(let* [or__199__auto__ true] 
+    (if or__199__auto__ 
+        or__199__auto__ 
+        (clojure.core/or false)))
 ```
 
 ---
@@ -190,35 +237,18 @@ Definiu les macros que tinguin el comportament següent:
     nil
     ```
 
----
-
-# Exercicis
-
-Definiu les macros que tinguin el comportament següent:
-
-- **Bucle for**:
+- **Bucle foreach**:
 
     ```clojure
-    (for-loop [i 0 (< i 5) (inc i)]
-      (println "Valor de i:" i))
+    (foreach [x [1 2 3]] 
+      (println (inc x)))
+    👉
+    2
+    3
+    4
+    nil
     ```
 
-**Bucle foreach**:
 
-
----
-
-# Exercicis
-
-Definiu les macros que tinguin el comportament següent:
-
-
-**Point-free**:
-
-- Canvi d'associativitat
-
-- Consumir només un element
-
-- mirar thread-first thread-last
 
 
