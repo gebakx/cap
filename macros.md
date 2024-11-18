@@ -29,54 +29,186 @@ class: left, middle, inverse
 
 ---
 
-# Macros vs Functions
+# Definició
 
-Les macros no són *first-class*; es tracten com qualsevol altre valor.
-- No pots accedir a elles en runtime. No poden ser passades com a paràmetres ni retornades per una funció. No són programació funcional.
+Les macros són la descripció d'un patró que permet reemplaçar una part de codi per una altra:
 
-Són útils quan:
-- El codi s'ha d'executar en temps de compilació.
-- Treballar amb argument no avaluats (ex: macro when).  Evasió de l'avaluació anticipada
-- Molt a veure amb noves estructures sintàctiques.
-- inline code (ex: log amb num de línia)
+- La seva sintaxi similar a la de les funcions
+
+- S'apliquen en temps de compilació
+
+- La seva aplicació s'anomena expansió
+
+- El seu ús queda restringit a construccions sintàctiques
+
+**Exemple**:
+
+- Ús: `(when test & body)`
+
+- Avalua `test`. Si `true`, avalua `body` en un `do`.
+
+.cols5050[
+.col1[
+```clojure
+(when (not= 0 3) (/ 2 3))  👉  2/3
+
+(when (not= 0 0) (/ 2 3))  👉  nil
+```
+]
+.col2[
+```clojure
+(macroexpand '(when (not= 0 3) (/ 2 3)))
+👉
+(if (not= 0 3) (do (/ 2 3)))
+```
+]]
+
+---
+
+# Característiques
+
+- Les macros no són *first-class*
+
+- No pots accedir a elles en *runtime*
+
+- No poden ser passades com a paràmetres ni retornades per una funció
+
+- No són programació funcional.
+
+### Utilitat
+
+- El codi s'ha d'executar en temps de compilació
+
+- Treballar amb argument no avaluats (ex: macro when)
+
+- Molt a veure amb noves estructures sintàctiques
+
+---
+
+# Expansió
+
+- (macroexpand-1 form)
+    If form represents a macro form, returns its expansion, else returns form.
+
+- (macroexpand form)
+    Repeatedly calls macroexpand-1 on form until it no longer
+    represents a macro form, then returns it.  Note neither
+    macroexpand-1 nor macroexpand expand macros in subforms.
+
+```clojure
+(-> {} (assoc :a 1) (assoc :b 2))
+{:b 2, :a 1}
+
+(macroexpand '(-> {} (assoc :a 1) (assoc :b 2)))
+(assoc (assoc {} :a 1) :b 2)
+```
+
+---
+
+# Quoting
+
+
+---
+
+# Definició
+
+```clojure
+(defmacro when
+  "Evaluates test. If logical true, evaluates body in an implicit do."
+  {:added "1.0"}
+  [test & body]
+  (list 'if test (cons 'do body)))
+```
+
+---
+
+### Gensym
+
+---
+
+# Exemple amb metas??
+
+**thread-last**:
+
+```clojure
+(defmacro ->
+  "Threads the expr through the forms. Inserts x as the
+  second item in the first form, making a list of it if it is not a
+  list already. If there are more forms, inserts the first form as the
+  second item in second form, etc."
+  {:added "1.0"}
+  [x & forms]
+  (loop [x x, forms forms]
+    (if forms
+      (let [form (first forms)
+            threaded (if (seq? form)
+                       (with-meta `(~(first form) ~x ~@(next form)) (meta form))
+                       (list form x))]
+        (recur threaded (next forms)))
+      x)))
+```
+
+---
+class: left, middle, inverse
+
+## Sumari
+
+- .brown[Macros]
+
+- .cyan[Exercicis]
+
+---
+
+# Exercicis
+
+Definiu les macros que tinguin el comportament següent:
+
+- **unless**:
+
+    ```clojure
+    (unless false
+      (println "Aquest missatge es mostra perquè la condició és falsa."))
+    👉
+    Aquest missatge es mostra perquè la condició és falsa.
+    nil
+
+    (unless true
+      (println "Aquest missatge no es mostra perquè la condició és certa."))
+    👉
+    nil
+    ```
+
+---
+
+# Exercicis
+
+Definiu les macros que tinguin el comportament següent:
+
+- **Bucle for**:
+
+    ```clojure
+    (for-loop [i 0 (< i 5) (inc i)]
+      (println "Valor de i:" i))
+    ```
+
+**Bucle foreach**:
 
 
 ---
 
 # Exercicis
 
-**unless**:
-
-```clojure
-(defmacro unless [condition & body]
-  `(if (not ~condition)
-     (do ~@body)))
-
-;; Exemple d'ús:
-(unless false
-  (println "Aquest missatge es mostrarà perquè la condició és falsa."))
-
-(unless true
-  (println "Aquest missatge no es mostrarà perquè la condició és certa."))
-```
+Definiu les macros que tinguin el comportament següent:
 
 **Decorador memoize**:
 
 
-**Bucle foreach**:
+**Point-free**:
 
+- Canvi d'associativitat
 
-**Bucle for**:
+- Consumir només un element
 
-```clojure
-(defmacro for-loop [[init condition step] & body]
-  `(loop [~@(take 1 init)]
-     (when ~condition
-       ~@body
-       (recur ~step))))
+- mirar thread-first thread-last
 
-;; Exemple d'ús:
-(for-loop [i 0 (< i 5) (inc i)]
-  (println "Valor de i:" i))
-```
 
