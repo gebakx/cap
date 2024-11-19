@@ -420,7 +420,7 @@ class: left, middle, inverse
 
 - Definiu una versió `cps_fib` amb *continuation-passing style*.
 
-- Definiu una versió `cps2_fib` per utilitzar amb la funció `trampoline`.
+- Executeu una versió `cps_fib` amb la funció `trampoline`.
 
 - Comproveu el comportament de les diferents versions amb diferents paràmetres. La funció `time` us serà d'utilitat.
 
