@@ -2,7 +2,7 @@ class: center, middle
 
 ## Conceptes Avançats de Programació
 
-# Avaluació mandrosa
+# Seqüències _Lazy_
 
 <br>
 
