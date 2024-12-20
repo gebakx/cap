@@ -112,7 +112,7 @@ class: left, middle, inverse
 
 # Exercicis
 
-1. [Arbre binari](problemes/arbre-binari.pdf)
+1. [Z92223 Clojure - Arbre binari](https://jutge.org/problems/Z92223_ca)
 
 2. Es vol tenir un mòdul per avaluar expressions amb operacions: +, -, *, /:
 
