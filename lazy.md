@@ -278,4 +278,5 @@ class: left, middle, inverse
 
 # Exercicis
 
-1. [Llistes infinites](problemes/llistes-infinites.pdf)
+1. [U47698 Clojure - Llistes infinites](https://jutge.org/problems/U47698_ca)
+
