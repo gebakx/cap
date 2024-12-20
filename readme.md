@@ -22,24 +22,24 @@ Universitat Politècnica de Catalunya
 
 ## Contingut
 
-- [Introducció a Clojure](introduccio.html) (2 setmanes) <br>
+- [Introducció a Clojure](introduccio.html) <br>
 .small[L'eina. Tipus bàsics i expressions. Funcions, locals, llistes i condicionals. Recursivitat. Tractament d'excepcions. Exercicis.]
 
-- [Funcions *first-class*](firstClass.html) (2 setmanes) <br>
+- [Funcions *first-class*](firstClass.html) <br>
 .small[Funcions d'ordre superior. Seqüències i col·leccions. Funcions d'ordre superior habituals. Llistes per comprensió. Exercicis.]
 
-- [Clausures](clausures.html) (2 setmanes) <br>
+- [Clausures](clausures.html) <br>
 .small[Clausures. Exercicis.]
 
-- [Funcions d'ordre superior](ordre-superior.html) (2 setmanes) <br>
+- [Funcions d'ordre superior](ordre-superior.html) <br>
 .small[Composició i *Pipelining*. *Tail Call Optimisation*. *Continuation-Passing Style*. *Trampolining*. Exercicis.]
 
-- [Immutabilitat](immutabilitat.html) (1 setmana) <br>
+- [Immutabilitat](immutabilitat.html) <br>
 .small[Immutabilitat. Exercicis.]
 
-- [Avaluació mandrosa](lazy.html) (1 setmana) <br>
+- [Seqüències _Lazy_](lazy.html) <br>
 .small[Avaluació mandrosa. Seqüències mandroses. Exercicis.]
 
-- [Macros](macros.html) (2 setmanes) <br>
+- [Macros](macros.html) <br>
 .small[Macros. Exercicis.]
 

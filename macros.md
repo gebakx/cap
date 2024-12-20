@@ -191,7 +191,7 @@ Les macros són la descripció d'un patró que permet reemplaçar una part de co
   ([x] x)
   ([x & next]
       `(let [or# ~x]
-         (if or# or# (or ~@next)))))
+         (if or# or# (my-or ~@next)))))
 ```
 
 ```clojure
@@ -204,7 +204,7 @@ Les macros són la descripció d'un patró que permet reemplaçar una part de co
 (let* [or__199__auto__ true] 
     (if or__199__auto__ 
         or__199__auto__ 
-        (clojure.core/or false)))
+        (macros/my-or false)))
 ```
 
 ---
