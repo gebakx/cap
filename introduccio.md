@@ -602,11 +602,11 @@ class: left, middle, inverse
 
 4. Doneu una funció en que, donada una nota, ens indiqui el seu equivalent textual.<br>  `(f 5.6)  👉  "aprovat"`
 
-5. [Funcions amb nombres](problemes/nombres.pdf)
+5. [U28436 Clojure - Funcions amb nombres](https://jutge.org/problems/U28436_ca)
 
-6. [Funcions amb llistes 1](problemes/llistes1.pdf)
+6. [S96390 Clojure - Funcions amb llistes](https://jutge.org/problems/S96390_ca)
 
-7. [Funcions amb llistes 2](problemes/llistes2.pdf)
+7. [Y75706 Clojure - Funcions amb llistes 2 ](https://jutge.org/problems/Y75706_ca)
 
 ---
 
