@@ -31,6 +31,8 @@ class: left, middle, inverse
 
 - Funcions d'ordre superior habituals
 
+- Composició i *Pipelining*
+
 - Llistes per comprensió
 
 - Exercicis
@@ -81,6 +83,8 @@ class: left, middle, inverse
 
 - Funcions d'ordre superior habituals
 
+- Composició i *Pipelining*
+
 - Llistes per comprensió
 
 - Exercicis
@@ -120,9 +124,11 @@ class: left, middle, inverse
 
 - .brown[Seqüències i col·leccions]
 
-- .brown[Funcions d'ordre superior habituals]
-
 - .cyan[*Destructuring*]
+
+- Funcions d'ordre superior habituals
+
+- Composició i *Pipelining*
 
 - Llistes per comprensió
 
@@ -173,6 +179,8 @@ class: left, middle, inverse
 - .brown[*Destructuring*]
 
 - .cyan[Funcions d'ordre superior habituals]
+
+- Composició i *Pipelining*
 
 - Llistes per comprensió
 
@@ -317,21 +325,89 @@ Mira si un predicat es satisfà per tots els elements d'una seqüència.
 ```
 
 ---
+class: left, middle, inverse
 
-# Funcions d'ordre superior habituals
+## Contingut
 
-### `comp` 
+- .brown[Funcions *First-Class*]
 
-Composició de funcions.
+- .brown[Seqüències i col·leccions]
 
-**Exemple**:
+- .brown[*Destructuring*]
+
+- .brown[Funcions d'ordre superior habituals]
+
+- .cyan[Composició i *Pipelining*]
+
+- Llistes per comprensió
+
+- Exercicis
+
+---
+
+# Composició i *Pipelining*
+
+El *pipelining* és l'encadenament de funcions mitjançant la composició.
+
+<br>
+
+**Composició de funcions**
 
 ```clojure
 ((comp reverse sort) '(3 1 5))  👉  (5 3 1)
 ```
+<br>
+
+**Pipelining**:
 
 ```clojure
 (def tres-mes-grans (comp (partial take 3) reverse sort))
+
+(tres-mes-grans '(3 1 2 6 7))  👉  (7 6 3)
+```
+
+---
+
+# Macros *thread-first* i *thread-last*
+
+Tenim 2 macros que ens ajuden molt en el *pipelining*:
+
+.cols5050[
+.col1[
+**Thread-first ->**:
+
+```clojure
+(-> a
+    (f b)
+    (g c))
+```
+
+que equival a:
+
+```clojure
+(g (f a b) c)
+```
+]
+.col2[
+**Thread-last ->>**:
+
+```clojure
+(->> a
+    (f b)
+    (g c))
+```
+
+que equival a:
+
+```clojure
+(g c (f b a))
+```
+]]
+
+**Exemple**:
+
+```clojure
+(def tres-mes-grans #(->> % sort reverse (take 3)))
 
 (tres-mes-grans '(3 1 2 6 7))  👉  (7 6 3)
 ```
@@ -348,6 +424,8 @@ class: left, middle, inverse
 - .brown[*Destructuring*]
 
 - .brown[Funcions d'ordre superior habituals]
+
+- .brown[Composició i *Pipelining*]
 
 - .cyan[Llistes per comprensió]
 
@@ -395,6 +473,8 @@ class: left, middle, inverse
 - .brown[*Destructuring*]
 
 - .brown[Funcions d'ordre superior habituals]
+
+- .brown[Composició i *Pipelining*]
 
 - .brown[Llistes per comprensió]
 
