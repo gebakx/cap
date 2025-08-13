@@ -23,7 +23,7 @@ Universitat Politècnica de Catalunya
 ## Contingut
 
 - [Introducció a Clojure](introduccio.html) <br>
-.small[L'eina. Tipus bàsics i expressions. Funcions, locals, llistes i condicionals. Recursivitat. Tractament d'excepcions. Exercicis.]
+.small[L'eina. Tipus bàsics i expressions. Funcions, locals, llistes, condicionals i destructuring. Recursivitat. Tractament d'excepcions. Exercicis.]
 
 - [Funcions *first-class*](firstClass.html) <br>
 .small[Funcions d'ordre superior. Seqüències i col·leccions. Funcions d'ordre superior habituals. Llistes per comprensió. Exercicis.]

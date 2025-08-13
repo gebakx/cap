@@ -27,7 +27,7 @@ class: left, middle, inverse
 
 - Tipus bàsics, expressions i llistes
 
-- Funcions, definicions locals i condicionals
+- Funcions, definicions locals, condicionals i destructuring
 
 - Recursivitat
 
@@ -169,7 +169,7 @@ class: left, middle, inverse
 
 - .cyan[Tipus bàsics, expressions i llistes]
 
-- Funcions, definicions locals i condicionals
+- Funcions, definicions locals, condicionals i destructuring
 
 - Recursivitat
 
@@ -358,7 +358,7 @@ class: left, middle, inverse
 
 - .brown[Tipus bàsics, expressions i llistes]
 
-- .cyan[Funcions, definicions locals i condicionals]
+- .cyan[Funcions, definicions locals, condicionals i destructuring]
 
 - Recursivitat
 
@@ -464,6 +464,29 @@ El `let` serveix per crear un lligam (*binding*) en un context (*scope*) lèxic.
 ```
 
 ---
+
+# Destructuring
+
+És una forma de crear *bindings* a valors a partir d'estructures.
+
+**Sequential destructuring**:
+
+```clojure
+(defn preu [v]
+    (let [[quantitat preu-unitari] v]
+        (* quantitat preu-unitari)))
+
+(preu '(2 3.50))  👉  7.0
+```
+
+**Sequential amb cua**:
+
+```clojure
+(let [[x y & z] (range 5)]
+    (list (list x y) z))  👉  ((0 1) (2 3 4))
+```
+
+---
 class: left, middle, inverse
 
 ## Contingut
@@ -472,7 +495,7 @@ class: left, middle, inverse
 
 - .brown[Tipus bàsics, expressions i llistes]
 
-- .brown[Funcions, definicions locals i condicionals]
+- .brown[Funcions, definicions locals, condicionals i destructuring]
 
 - .cyan[Recursivitat]
 
@@ -541,7 +564,7 @@ class: left, middle, inverse
 
 - .brown[Tipus bàsics, expressions i llistes]
 
-- .brown[Funcions, definicions locals i condicionals]
+- .brown[Funcions, definicions locals, condicionals i destructuring]
 
 - .brown[Recursivitat]
 
@@ -582,7 +605,7 @@ class: left, middle, inverse
 
 - .brown[Tipus bàsics, expressions i llistes]
 
-- .brown[Funcions, definicions locals i condicionals]
+- .brown[Funcions, definicions locals, condicionals i destructuring]
 
 - .brown[Recursivitat]
 
@@ -608,22 +631,3 @@ class: left, middle, inverse
 
 7. [Y75706 Clojure - Funcions amb llistes 2 ](https://jutge.org/problems/Y75706_ca)
 
----
-
-# Exercici
-
-## _Destructuring_
-
-Estudieu el concepte de **_destructuring_** (_desestructuració_?)
-
-Referències:
-
-* The Joy of Clojure (2nd. ed.) Cap. 3, sec. 3.3
-* https://clojure.org/reference/special_forms , secció _Binding Forms (Destructuring)_
-* https://clojure.org/guides/destructuring (no la darrera secció de Macros)
-* https://john2x.com/blog/clojure-destructuring.html
-
-És molt útil i ho farem servir, sobre tot a la definició de funcions i en les
-`binding-forms` del `let`.
-
-A classe de laboratori resoldrem els dubtes que us puguin sorgir.
