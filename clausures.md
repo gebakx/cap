@@ -23,13 +23,13 @@ class: left, middle, inverse
 
 ## Sumari
 
-- .cyan[Sessió 5]
+- .cyan[Clausures]
 
-  - .cyan[Clausures]
+- Exercicis
 
-  - Exercicis
+- Atoms
 
-- Sessió 6
+- Exercicis
 
 ---
 
@@ -85,13 +85,13 @@ class: left, middle, inverse
 
 ## Sumari
 
-- Sessió 5
+- .brown[Clausures]
 
-  - .brown[Clausures]
+- .cyan[Exercicis]
 
-  - .cyan[Exercicis]
+- Atoms
 
-- Sessió 6
+- Exercicis
 
 ---
 
@@ -172,13 +172,13 @@ class: left, middle, inverse
 
 ## Sumari
 
-- .brown[Sessió 5]
+- .brown[Clausures]
 
-- .cyan[Sessió 6]
+- .brown[Exercicis]
 
-  - .cyan[Atoms]
+- .cyan[Atoms]
 
-  - Exercicis
+- Exercicis
 
 ---
 
@@ -234,13 +234,18 @@ class: left, middle, inverse
 
 ## Sumari
 
-- .brown[Sessió 5]
+---
+class: left, middle, inverse
 
-- .cyan[Sessió 6]
+## Sumari
 
-  - .brown[Atoms]
+- .brown[Clausures]
 
-  - .cyan[Exercicis]
+- .brown[Exercicis]
+
+- .brown[Atoms]
+
+- .cyan[Exercicis]
 
 ---
 
