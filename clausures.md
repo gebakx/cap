@@ -234,11 +234,6 @@ class: left, middle, inverse
 
 ## Sumari
 
----
-class: left, middle, inverse
-
-## Sumari
-
 - .brown[Clausures]
 
 - .brown[Exercicis]
