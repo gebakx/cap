@@ -484,6 +484,16 @@ class: left, middle, inverse
 
 # Exercicis
 
+1. [W86002 Clojure - Ús de funcions d'ordre superior ](https://jutge.org/problems/W86002_ca)
+
+2. [W54264 Clojure - Ús de llistes per comprensió ](https://jutge.org/problems/W54264_ca)
+
+2. [Y93083 Clojure - Exercici de fold/reduce ](https://jutge.org/problems/Y93083_ca)
+
+---
+
+# Altres exercicis 
+
 1. Escriu una funció que, donada una llista d'enters, filtri els nombres parells, multipliqui cada nombre per 2 i després sumi tots els elements.
 
 2. Escriu una funció que, donat un map de noms i edats, retorni un vector dels noms de les persones majors de 18 anys, ordenades alfabèticament.
@@ -492,21 +502,17 @@ class: left, middle, inverse
 
 4. Escriu una funció que, donat un vector de maps amb les claus `:preu` i `:quantitat`, calculi el total per cada element `(preu * quantitat)`, elimini els que tinguin un valor total inferior a 100 i sumi tots els totals.
 
-5. Escriu una funció que rebi una llista de nombres, elimini els nombres més petits que 5, multipliqui els resultants per 3 i els ordeni en ordre descendent.
-
 ---
 
-# Exercicis 
+# Altres exercicis 
+
+5. Escriu una funció que rebi una llista de nombres, elimini els nombres més petits que 5, multipliqui els resultants per 3 i els ordeni en ordre descendent.
 
 6. Escriu una funció que prengui una llista d'strings, calculi la longitud de cada cadena, elimini les longituds parells i sumi les longituds restants.
 
 7. Escriu una funció que prengui una llista de nombres, elimini aquells que siguin múltiples de 3, prengui els primers 5 resultats i els elevi al quadrat.
 
-8. [W86002 Clojure - Ús de funcions d'ordre superior ](https://jutge.org/problems/W86002_ca)
-
-9. [W54264 Clojure - Ús de llistes per comprensió ](https://jutge.org/problems/W54264_ca)
-
-10. Definiu una funció que converteixi un número romà al seu enter equivalent amb funcions d'ordre superior.
+8. Definiu una funció que converteixi un número romà al seu enter equivalent amb funcions d'ordre superior.
   Recordeu que els números romans s’escriuen amb els símbols I, V, X, L, C, D i M, amb valors 1, 5, 10, 50, 100, 500 i 1000 respectivament. En aquest sistema, per obtenir el nombre representat, se sumen els valors dels símbols, excepte els símbols situats a l’esquerra d’un símbol de valor més gran, que es resten.
 
 
