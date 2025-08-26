@@ -29,7 +29,7 @@ Universitat Politècnica de Catalunya
 .small[Funcions d'ordre superior. Seqüències i col·leccions. Funcions d'ordre superior habituals. Llistes per comprensió. Exercicis.]
 
 - [Clausures](clausures.html) <br>
-.small[Clausures. Exercicis.]
+.small[Clausures. Àtoms. Exercicis.]
 
 - [Funcions d'ordre superior](ordre-superior.html) <br>
 .small[Composició i *Pipelining*. *Tail Call Optimisation*. *Continuation-Passing Style*. *Trampolining*. Exercicis.]
