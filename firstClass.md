@@ -496,11 +496,11 @@ class: left, middle, inverse
 
 2. Escriu una funció que, donat un map de noms i edats, retorni un vector dels noms de les persones majors de 18 anys, ordenades alfabèticament.
 
+3. Escriu una funció que prengui un vector d'enters, elimini els negatius, prengui els tres primers nombres i multipliqui cadascun per 10.
+
 ---
 
 ## Altres exercicis 
-
-3. Escriu una funció que prengui un vector d'enters, elimini els negatius, prengui els tres primers nombres i multipliqui cadascun per 10.
 
 4. Escriu una funció que, donat un vector de maps amb les claus `:preu` i `:quantitat`, calculi el total per cada element `(preu * quantitat)`, elimini els que tinguin un valor total inferior a 100 i sumi tots els totals.
 
