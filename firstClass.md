@@ -490,21 +490,19 @@ class: left, middle, inverse
 
 2. [Y93083 Clojure - Exercici de fold/reduce ](https://jutge.org/problems/Y93083_ca)
 
----
-
-# Altres exercicis 
+## Altres exercicis 
 
 1. Escriu una funció que, donada una llista d'enters, filtri els nombres parells, multipliqui cada nombre per 2 i després sumi tots els elements.
 
 2. Escriu una funció que, donat un map de noms i edats, retorni un vector dels noms de les persones majors de 18 anys, ordenades alfabèticament.
 
+---
+
+## Altres exercicis 
+
 3. Escriu una funció que prengui un vector d'enters, elimini els negatius, prengui els tres primers nombres i multipliqui cadascun per 10.
 
 4. Escriu una funció que, donat un vector de maps amb les claus `:preu` i `:quantitat`, calculi el total per cada element `(preu * quantitat)`, elimini els que tinguin un valor total inferior a 100 i sumi tots els totals.
-
----
-
-# Altres exercicis 
 
 5. Escriu una funció que rebi una llista de nombres, elimini els nombres més petits que 5, multipliqui els resultants per 3 i els ordeni en ordre descendent.
 
