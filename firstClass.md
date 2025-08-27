@@ -492,15 +492,5 @@ class: left, middle, inverse
 
 4. [U86019 Clojure - Funcions d'ordre superior 1](https://jutge.org/problems/Y93083_ca)
 
-## Altres exercicis 
-
-2. Escriu una funció que, donat un map de noms i edats, retorni un vector dels noms de les persones majors de 18 anys, ordenades alfabèticament.
-
-4. Escriu una funció que, donat un vector de maps amb les claus `:preu` i `:quantitat`, calculi el total per cada element `(preu * quantitat)`, elimini els que tinguin un valor total inferior a 100 i sumi tots els totals.
-
-6. Escriu una funció que prengui una llista d'strings, calculi la longitud de cada cadena, elimini les longituds parells i sumi les longituds restants.
-
-8. Definiu una funció que converteixi un número romà al seu enter equivalent amb funcions d'ordre superior.
-  Recordeu que els números romans s’escriuen amb els símbols I, V, X, L, C, D i M, amb valors 1, 5, 10, 50, 100, 500 i 1000 respectivament. En aquest sistema, per obtenir el nombre representat, se sumen els valors dels símbols, excepte els símbols situats a l’esquerra d’un símbol de valor més gran, que es resten.
-
+5. [X13379 Clojure - Funcions d'ordre superior 2](https://jutge.org/problems/X13379_ca)
 

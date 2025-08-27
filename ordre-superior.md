@@ -363,3 +363,6 @@ class: left, middle, inverse
    {:regId 2, :regName "Asia", :country "Japan", :countryID :JP})
   ```
 
+- 
+8. Definiu una funció que converteixi un número romà al seu enter equivalent amb funcions d'ordre superior.
+  Recordeu que els números romans s’escriuen amb els símbols I, V, X, L, C, D i M, amb valors 1, 5, 10, 50, 100, 500 i 1000 respectivament. En aquest sistema, per obtenir el nombre representat, se sumen els valors dels símbols, excepte els símbols situats a l’esquerra d’un símbol de valor més gran, que es resten.
