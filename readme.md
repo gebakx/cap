@@ -31,8 +31,8 @@ Universitat Politècnica de Catalunya
 - [Clausures](clausures.html) <br>
 .small[Clausures. Àtoms. Exercicis.]
 
-- [Funcions d'ordre superior](ordre-superior.html) <br>
-.small[Composició i *Pipelining*. *Tail Call Optimisation*. *Continuation-Passing Style*. *Trampolining*. Exercicis.]
+- [Tècniques amb Funcions d'ordre superior](ordre-superior.html) <br>
+.small[*Tail Call Optimisation*. *Continuation-Passing Style*. *Trampolining*. *Transducers*. Exercicis.]
 
 - [Immutabilitat](immutabilitat.html) <br>
 .small[Immutabilitat. Exercicis.]
