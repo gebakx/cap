@@ -118,20 +118,9 @@ class: left, middle, inverse
       (println result))
     ```
 
-1. [X56149 Clojure - Punts amb clausures 1](https://jutge.org/problems/X56149_ca)
+- [X56149 Clojure - Punts amb clausures 1](https://jutge.org/problems/X56149_ca)
 
-
----
-
-# Exercici 3
-
-- Implementeu una funció `my-partial` que faci el mateix que la funció clojure `partial`:
-
-    ```clojure
-    ((my-partial * 2) 4)  👉  8
-
-    ((my-partial * 2) 4 3)  👉  24
-    ```
+- [T66007 Clojure - Partial amb clausures](https://jutge.org/problems/T66007_ca)
 
 ---
 class: left, middle, inverse
