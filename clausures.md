@@ -95,7 +95,7 @@ class: left, middle, inverse
 
 ---
 
-# Exercici 1
+# Exercicis
 
 - Executa aquest codi i justifica el resultat que mostra.
 
@@ -118,42 +118,8 @@ class: left, middle, inverse
       (println result))
     ```
 
----
+1. [X56149 Clojure - Punts amb clausures 1](https://jutge.org/problems/X56149_ca)
 
-# Exercici 2
-
-Es poden utilitzar clausures per definir objectes sense classe. En aquest problema definirem l'"objecte" per representar punts en el pla amb clausures. Així fent `(punt 2 2)` ens tornarà una instància amb les coordenades cartesianes {2, 2}.
-
-- Afegiu la funcionalitat tal que a l'aplicar les *keywords* (a l'estil dels mètodes) `:crt` o `:plr` per obtenir les coordenades cartesianes o polars respectivament.
-
-    ```clojure
-    ((punt 2 0) :crt)  👉  (2 0)
-
-    ((punt 2 0) :plr)  👉  (2.0 0.0)
-
-    ((punt 2 2) :crt)  👉  (2 2)
-
-    ((punt 2 2) :plr)  👉  (2.8284271247461903 45.0)
-    ```
-
----
-
-# Exercici 2bis
-
-- Afegiu la possibilitat de calcular distàncies euclidianes amb la *keyword* `:dst`.
-
-    ```clojure
-    ((punt 2 2) :dst (punt 2 0))  👉  2.0
-
-    ((punt 2 0) :dst (punt 2 0))  👉  0.0
-    ```
-
-- Doneu una funció `mes-propera` que, donada una llista de punts i un punt, ens torni el punt de la llista més proper al donat com a paràmetre.
-
-    ```clojure
-    (mes-propera (punt 2 0) (list (punt 1 1) (punt 2 1) (punt 3 2)))
-    👉  (2 1)
-    ```
 
 ---
 
