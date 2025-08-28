@@ -112,21 +112,7 @@ class: left, middle, inverse
 
 # Exercicis
 
-1. [Z92223 Clojure - Arbre binari](https://jutge.org/problems/Z92223_ca)
+- [Z92223 Clojure - Arbre binari](https://jutge.org/problems/Z92223_ca)
 
-2. Es vol tenir un mòdul per avaluar expressions amb operacions: +, -, *, /:
-
-  `expr ::= (:val int) | (:add expr expr) | (:sub expr expr) |`
-  `         (:mul expr expr) | (:div expr expr)`
-
-  $3 + 4/2 \rightarrow$ `(:add (:val 3) (:div (:val 4) (:val 2)))  👉  5`
-
-  Definiu una funció `avalua` que, donada una "expr", retorni la seva avaluació. En el cas de que es produeixi una divisió per zero, hauria de llançar una excepció "div0" per indicar-ho.
-
-| expressió | resultat |
-|:---|:---|
-| `(avalua '(:add (:val 2) (:val 3)))` | `5` |
-| `(avalua '(:mul (:add (:val 2) (:val 3)) (:sub (:val 2) (:val 3))))` | `-5` |
-| `(avalua '(:add (:div (:val 4) (:val 0)) (:val 3)))` | "div0" |
-
+- [W89172 Clojure - Expressions](https://jutge.org/problems/W89172_ca)
 
