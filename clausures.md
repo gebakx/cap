@@ -199,9 +199,9 @@ class: left, middle, inverse
 
 ---
 
-# Exercici 1
+# Exercicis
 
-Estudieu aquest codi i justifiqueu perquè funciona:
+- Estudieu aquest codi i justifiqueu perquè funciona:
 
 ```clojure
 (defn memoize [f]
@@ -227,29 +227,7 @@ user=> "Elapsed time: 941.445 msecs"
 user=> "Elapsed time: 0.044 msecs"
 ```
 
+- [X86942 Clojure - Punts amb clausures 2](https://jutge.org/problems/X86942_ca/statement)
+
 .footnote[font: [Clojure - Atoms](https://clojure.org/reference/atoms)]
 
----
-
-# Exercici 2
-
-- Feu una versió mutable de l'exercici 2 (punt) de la sessió 5.
-
-- Han de continuar funcionant els "mètodes": `:crt`, `:plr` i `:dst`. 
-
-- Afegiu tres "mètodes" nous:
-
-  - `:rst`: que inicialitzi el punt a (0, 0).
-
-  - `:inx`: que incrementi la coordenada x en 1.
-
-  - `:iny`: que incrementi la coordenada y en 1.
-
-```clojure
-(use 'punts2 :reload-all)
-(def p (punt))
-(p :inx)  👉  [1 0]
-(def q (punt))
-(q :iny)  👉  [0 1]
-(p :dst q)  👉  1.4142135623730951
-```
