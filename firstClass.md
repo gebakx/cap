@@ -490,7 +490,7 @@ class: left, middle, inverse
 
 3. [Y93083 Clojure - Exercici de fold/reduce](https://jutge.org/problems/Y93083_ca)
 
-4. [U86019 Clojure - Funcions d'ordre superior 1](https://jutge.org/problems/Y93083_ca)
+4. [U86019 Clojure - Funcions d'ordre superior 1](https://jutge.org/problems/U86019_ca)
 
 5. [X13379 Clojure - Funcions d'ordre superior 2](https://jutge.org/problems/X13379_ca)
 
