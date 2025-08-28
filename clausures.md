@@ -203,6 +203,8 @@ class: left, middle, inverse
 
 - Estudieu aquest codi i justifiqueu perquè funciona:
 
+.cols5050[
+.col1[
 ```clojure
 (defn memoize [f]
   (let [mem (atom {})]
@@ -217,7 +219,10 @@ class: left, middle, inverse
   (if (<= n 1)
     n
     (+ (fib (dec n)) (fib (- n 2)))))
-
+```
+]
+.col2[
+```clojure
 (time (fib 35))
 user=> "Elapsed time: 941.445 msecs"
 
@@ -226,6 +231,7 @@ user=> "Elapsed time: 941.445 msecs"
 (time (fib 35))
 user=> "Elapsed time: 0.044 msecs"
 ```
+]]
 
 - [X86942 Clojure - Punts amb clausures 2](https://jutge.org/problems/X86942_ca/statement)
 
