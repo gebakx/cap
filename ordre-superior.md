@@ -2,7 +2,7 @@ class: center, middle
 
 ## Conceptes Avançats de Programació
 
-# Funcions d'ordre superior
+# Tècniques amb funcions d'ordre superior
 
 <br>
 
@@ -23,86 +23,102 @@ class: left, middle, inverse
 
 ## Sumari
 
-- .cyan[*Tail Recursion*]
+- .cyan[Divideix i venç]
+
+- *Backtracking*
 
 - *Continuation-Passing Style*
 
 - *Trampolining*
 
-- Exercicis
-
 - *Transducers*
 
-- Exercicis
-
 ---
 
-# Recursivitat
+# Divideix i venç
 
-*Tail Recursion*: la crida recursiva es fa just abans de retornar el valor.
+Definir funcions: 
+- `trivial`: predicat cas trivial
+- `directe`: resultat cas trivial
+- `dividir`: retorna dos subproblemes
+- `vèncer`: composició dels subproblemes
 
-.cols5050[
-.col1[
-**Factorial recursiu**:
-
-```clojure
-(defn f_rec [n]
-  (if (== n 0)
-    1
-    (*' n (f_rec (dec n)))))
-```
-]
-.col2[
-**Factorial tail recursion**:
+Funció `dIv`:
 
 ```clojure
-(defn f_tailrec
-  ([n] (f_tailrec n 1))
-  ([n resultat]
-    (if (== n 0)
-      resultat
-      (f_tailrec (dec n) 
-                 (*' n resultat)))))
+(defn dIv
+  [trivial directe dividir vèncer]
+  (letfn [(dIv' [vct]
+            (if (trivial vct)
+              (directe vct)
+              (let [[x1 x2] (dividir vct)
+                    y1 (dIv' x1)
+                    y2 (dIv' x2)]
+                (vèncer vct [x1,x2] [y1,y2]))))]
+    dIv'))
 ```
-]]
 
-- **Tail Recursion Optimization**: optimització en que el compilador substitueix la crida per recursiva per un salt. 
+#### Exercici
 
-- Clojure no ho suporta degut a l'arquitectura de la *JVM*
-
-- Altra opció és passar-la a **iterativa**...
-
----
-
-# Recur
-
-Aproximació en Clojure:
-
-```clojure
-(defn f_iter
-  ([n] (f_iter n 1))
-  ([n resultat]
-    (if (== n 0)
-      resultat
-      (recur (dec n) (*' n resultat)))))
-```
+- [Y73217 Clojure - Cerca dicotòmica amb Divideix i venç](https://jutge.org/problems/Y73217_ca)
 
 ---
 class: left, middle, inverse
 
 ## Sumari
 
-- .brown[*Tail Recursion*]
+- .brown[Divideix i venç]
+
+- .cyan[*Backtracking*]
+
+- *Continuation-Passing Style*
+
+- *Trampolining*
+
+- *Transducers*
+
+---
+
+# Backtracking
+
+Definir funcions: 
+- `initial`: solució parcial buida
+- `obj`: objectiu assolit?
+- `succ`: següent solució parcial
+
+Funció `bTck`:
+
+```clojure
+(defn bTck [succ obj]
+  (letfn [(bTck' [v]
+            (cond
+              (empty? v)     []
+              (obj (peek v)) (conj (bTck' (pop v)) (peek v))
+              :else          (let [x (peek v)]
+                               (recur (foldr (flip conj) (pop v) (succ x))))))]
+    (fn [inicial]
+      (bTck' [inicial]))))
+```
+
+#### Exercici
+
+- [Clojure - Parèntesis amb Backtracking](https://jutge.org/problems/S28790_ca)
+
+
+---
+class: left, middle, inverse
+
+## Sumari
+
+- .brown[Divideix i venç]
+
+- .brown[*Backtracking*]
 
 - .cyan[*Continuation-Passing Style*]
 
 - *Trampolining*
 
-- Exercicis
-
 - *Transducers*
-
-- Exercicis
 
 ---
 
@@ -155,38 +171,34 @@ Amb una funció recursiva és més natural.
 
 Continuem tenint el problema de la pila.
 
+#### Exercici
+
+- [W83860 Clojure - my-map en Continuation-Passing Style](https://jutge.org/problems/W83860_ca)
+
 ---
 class: left, middle, inverse
 
 ## Sumari
 
-- .brown[*Tail Recursion*]
+- .brown[Divideix i venç]
+
+- .brown[*Backtracking*]
 
 - .brown[*Continuation-Passing Style*]
 
 - .cyan[*Trampolining*]
 
-- Exercicis
-
 - *Transducers*
-
-- Exercicis
 
 ---
 
 # *Trampolining*
 
-És una tècnica que evita el creixement de la pila.
-
-### `trampoline`
-
 `(trampoline f & args)`
 
-Aplica `f` a `args` i continua aplicant el resultat fins que deixa de ser una funció.
+Aplica `f` a `args` i continua aplicant el resultat fins que deixa de ser una funció. És una tècnica que evita el creixement de la pila.
 
-**Factorial**:
-
-Afegim a la funció factorial un parell de *lambdes*:
+**Factorial**: Afegim a la funció factorial un parell de *lambdes*:
 
 .cols5050[
 .col1[
@@ -217,40 +229,9 @@ Afegim a la funció factorial un parell de *lambdes*:
 ```
 ]]
 
----
-class: left, middle, inverse
+#### Exercici
 
-## Sumari
-
-- .brown[*Tail Recursion*]
-
-- .brown[*Continuation-Passing Style*]
-
-- .brown[*Trampolining*]
-
-- .cyan[Exercicis]
-
-- *Transducers*
-
-- Exercicis
-
----
-
-# Exercici 
-
-**Fibonacci**:
-
-- Definiu una funció `slow_fib` que torni l'n-èssim element de la sèrie de Fibonacci.
-
-- Definiu una versió `quick_fib` amb *tail recursion*.
-
-- Definiu una versió `iter_fib` iterativa amb `recur`.
-
-- Definiu una versió `cps_fib` amb *continuation-passing style*.
-
-- Executeu una versió `cps_fib` amb la funció `trampoline`.
-
-- Comproveu el comportament de les diferents versions amb diferents paràmetres. La funció `time` us serà d'utilitat.
+- [W83860 Clojure - my-map en Continuation-Passing Style](https://jutge.org/problems/W83860_ca)
 
 ---
 class: left, middle, inverse
@@ -262,107 +243,81 @@ class: left, middle, inverse
 - .brown[*Continuation-Passing Style*]
 
 - .brown[*Trampolining*]
-
-- .brown[Exercicis]
 
 - .cyan[*Transducers*]
 
-- Exercicis
-
----
-class: left, middle, inverse
-
-## Sumari
-
-- .brown[*Tail Recursion*]
-
-- .brown[*Continuation-Passing Style*]
-
-- .brown[*Trampolining*]
-
-- .brown[Exercicis]
-
-- .brown[*Transducers*]
-
-- .cyan[Exercicis]
-
 ---
 
-# Exercicis
+# Transducers
 
-- Definiu una funció `freqs` que, donada una llista, torni un diccionari que tingui com a claus els elements de la llista i com a valors el nombre de vegades que apareix a la llista.
+Els *transducers* són cadenes de processament de dades que:
+- funcionen mitjançant composició
+- optimitzen el procés per eficiència
 
-  ```clojure
-  (freqs '(1 2 3 2 1 3))  👉  {1 2, 2 2, 3 2}
-  ```
+.cols5050[
+.col1[
+```clojure
+(->> (range 10) 
+    (map inc) 
+    (filter even?) 
+    (reduce +))
 
-- Definiu una funció `paraules-inici-fi` que, donats un string amb paraules separades per espais i dos caràcters, torni les paraules de l'string que comencen pel 1er caràcter i acaben pel segon.
+👉  30
+```
 
-  ```clojure
-  (paraules-inici-fi "el gos menja galetes" \g \s)  👉  ("gos" "galetes")
-  ```
+![:scale 100%](figures/chain.gif)
 
-- Definiu una funció `ordre-diferents` que, donat un string amb paraules separades per espais, torni una llista ordenada de paraules no repetides.
+]
+.col2[
+```clojure
+(transduce 
+    (comp 
+        (map inc) 
+        (filter even?)) 
+    + 
+    (range 10))
 
-  ```clojure
-  (ordre-diferents "aa bb ab bb ab ab")  👉  ("aa" "ab" "bb")
-  ```
+👉  30
+```
 
----
+![:scale 80%](figures/transduce.gif)<br>
+]]
 
-# Exercicis
 
-- Definiu una funció `ordre-mida` que, donada una llista de ciutats, torni la llista de les que tenen més de 5 lletres ordenades pel nombre de lletres.
+La funció .blue[*tranduce*] implica un .blue[*reduce*] final.
 
-  ```clojure
-  (def ciutats '("Roma" "París" "Tòquio" "Nairobi" "Barcelona"))
-  (ordre-mida ciutats)  👉  ("Tòquio" "Nairobi" "Barcelona")
-  ```
-
-- Definiu una funció `agrupa` que, donada una llista de ciutats, les agrupi de 3 en 3.
-
-  ```clojure
-  (def ciutats '("Roma" "París" "Tòquio" "Londres" "Nairobi" "Barcelona" "Nova Delhi"))
-  (agrupa ciutats)  👉  (("Tòquio" "París" "Roma") ("Barcelona" "Nairobi" "Londres") ("Nova Delhi"))
-  ```
-
-- Definiu una funció `cartesia` que, donats 3 conjunts, torni una llista de llistes amb el producte cartesià dels 3 conjunts.
-
-  ```clojure
-  (cartesia #{"x" "y" "z"} #{1 2 3 4} #{:blanc :negre})
-  👉
-  (("z" 1 :blanc) ("z" 1 :negre) ("z" 4 :blanc) ("z" 4 :negre) ("z" 3 :blanc) ("z" 3 :negre) ("z" 2 :blanc) ("z" 2 :negre) ("x" 1 :blanc) ("x" 1 :negre) ("x" 4 :blanc) ("x" 4 :negre) ("x" 3 :blanc) ("x" 3 :negre) ("x" 2 :blanc) ("x" 2 :negre) ("y" 1 :blanc) ("y" 1 :negre) ("y" 4 :blanc) ("y" 4 :negre) ("y" 3 :blanc) ("y" 3 :negre) ("y" 2 :blanc) ("y" 2 :negre))
-  ```
+[font: Transducers](https://fasihkhatib.com/2018/01/06/transducers/)
 
 ---
 
-# Exercici
+# Transducers
 
-- Definiu una funció `inner-join` que funcioni tal i com mostra l'exemple:
+.blue[eduction]: quan no volem el *reduce* final.
 
-  ```clojure
-  (def regions 
-    '({:regId 1 :regName "Europe"}
-      {:regId 2 :regName "Asia"}))
+```clojure
+(eduction (comp (map inc) (filter even?)) (range 10))
+(2 4 6 8 10)
 
-  (def countries
-    '({:regId 1 :country "Belgium" :countryID :BE}
-      {:regId 1 :country "Switzerland" :countryID :CH}
-      {:regId 2 :country "India" :countryID :IN}
-      {:regId 2 :country "Japan" :countryID :JP}
-      {:regId 1 :country "Denmark" :countryID :DK}))
-  ```
+👉  (2 4 6 8 10)
+```
 
-  ```clojure
-  (inner-join regions countries :regId)
-  👉
-  ({:regId 1, :regName "Europe", :country "Belgium", :countryID :BE} 
-   {:regId 1, :regName "Europe", :country "Switzerland", :countryID :CH} 
-   {:regId 1, :regName "Europe", :country "Denmark", :countryID :DK} 
-   {:regId 2, :regName "Asia", :country "India", :countryID :IN} 
-   {:regId 2, :regName "Asia", :country "Japan", :countryID :JP})
-  ```
+.blue[into]: crida internament a *transduce*.
 
-- 
-8. Definiu una funció que converteixi un número romà al seu enter equivalent amb funcions d'ordre superior.
-  Recordeu que els números romans s’escriuen amb els símbols I, V, X, L, C, D i M, amb valors 1, 5, 10, 50, 100, 500 i 1000 respectivament. En aquest sistema, per obtenir el nombre representat, se sumen els valors dels símbols, excepte els símbols situats a l’esquerra d’un símbol de valor més gran, que es resten.
+```clojure
+(into [] (comp (map inc) (filter even?)) (range 10))
+
+👉  [2 4 6 8 10]
+```
+
+.blue[sequence]: per avaluació *lazy*.
+
+```clojure
+(sequence (comp (map inc) (filter even?)) (range 10))
+
+👉  (2 4 6 8 10)
+```
+
+#### Exercici
+
+- [Z78471 Clojure - Transducers](https://jutge.org/problems/Z78471_ca)
+
