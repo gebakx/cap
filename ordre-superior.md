@@ -238,7 +238,9 @@ class: left, middle, inverse
 
 ## Sumari
 
-- .brown[*Tail Recursion*]
+- .brown[Divideix i venç]
+
+- .brown[*Backtracking*]
 
 - .brown[*Continuation-Passing Style*]
 
