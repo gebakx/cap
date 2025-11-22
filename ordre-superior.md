@@ -124,7 +124,8 @@ class: left, middle, inverse
 
 # *Continuation-Passing Style*
 
-És una tècnica de la programació funcional en la que es retornen les funcions a aplicar al resultat, en lloc dels valors.
+És una tècnica de la programació funcional en la que es retornen les
+funcions a aplicar al resultat, en lloc dels valors.
 
 **Exemple**:
 
@@ -205,13 +206,12 @@ Aplica `f` a `args` i continua aplicant el resultat fins que deixa de ser una fu
 ```clojure
 (defn fact_cps2 [n cont]
   (if (== n 0)
-    (cont 1)
-    (fn [] 
-      (fact_cps2 
+    #(cont 1) 
+    #(fact_cps2 
         (dec n)
         (fn [valor] 
           (fn [] 
-            (cont (*' n valor))))))))
+            (cont (*' n valor)))))))
 ```
 ]
 .col2[
