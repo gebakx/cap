@@ -224,7 +224,7 @@ Les macros són la descripció d'un patró que permet reemplaçar una part de co
 
 ```clojure
 (defmacro adder2 [n]
-  `(fn [x#] (+ 5 x#)))
+  `(fn [x#] (+ ~n x#)))
 
 ((adder2 5) 3)  👉  8
 ```
