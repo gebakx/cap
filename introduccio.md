@@ -61,12 +61,12 @@ clj
 .col2[
 - quit: *Ctrl + d*
 
-- load: `(use 'nom :reload-all)`
+- load: `(load-file "nom.clj")`
 ]]
 
 ---
 
-# Hello world!
+# Amb projecte
 
 **Estructura del projecte**:
 
