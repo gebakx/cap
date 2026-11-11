@@ -100,8 +100,6 @@ class: left, middle, inverse
 - Executa aquest codi i justifica el resultat que mostra.
 
     ```clojure
-    (ns misteri)
-
     (defn misteri [n]
       (let [secret 4
             n (+ n 2)]
